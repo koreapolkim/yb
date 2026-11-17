@@ -1,0 +1,1078 @@
+﻿﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d5f0ff">
+  <meta name="description" content="우리동네 안심귀가 동행 서비스. QR로 접속해 문자로 신청하세요.">
+  <meta property="og:title" content="우리동네 안심귀가 동행">
+  <meta property="og:description" content="자율방범대와 함께하는 안심귀가 동행 신청 서비스">
+  <title>우리동네 안심귀가 동행</title>
+  <style>
+:root{color-scheme:light;--ink:#164e78;}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;min-width:320px;padding-bottom:100px;font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6;word-break:keep-all;}
+button,a{font:inherit;-webkit-tap-highlight-color:transparent;}
+button{cursor:pointer;}
+a{color:inherit;}
+[hidden]{display:none!important;}
+:focus-visible{outline:3px solid #0b7fcd;outline-offset:4px;}
+.wrap{width:min(1060px,calc(100% - 48px));margin-inline:auto;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+.header{position:sticky;top:0;z-index:25;}
+.header-inner{height:77px;display:flex;align-items:center;justify-content:space-between;gap:15px;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;}
+.brand-mark{display:grid;place-items:center;flex:none;width:44px;height:44px;overflow:hidden;}
+.brand-mark img{display:block;width:100%;height:100%;object-fit:contain;}
+.brand-mark svg{width:26px;height:26px;}
+.brand-txt{min-width:0;}
+.brand-title{display:block;font-weight:900;font-size:19px;letter-spacing:-.062em;line-height:1.2;}
+.brand-title-short{display:none;}
+.brand-caption{display:block;font-weight:700;font-size:11px;margin-top:5px;}
+.header-actions{display:flex;align-items:center;gap:9px;flex:none;}
+.lang-picker{display:flex;position:relative;align-items:center;gap:5px;height:44px;max-width:166px;padding:0 9px;border:1px solid #cfe6f7;border-radius:13px;}
+.lang-picker:focus-within{outline:3px solid #88cfff;outline-offset:2px;}
+.lang-picker svg{width:18px;height:18px;flex:none;}
+.lang-picker select{appearance:none;-webkit-appearance:none;border:0;outline:none;background:transparent;font-size:12px;font-weight:850;max-width:123px;width:123px;height:100%;padding:0 12px 0 0;cursor:pointer;text-overflow:ellipsis;}
+.lang-picker .select-chevron{pointer-events:none;position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;color:#417da5;}
+.menu-btn{width:46px;height:46px;flex:none;display:grid;place-items:center;gap:0;border:1px solid #d8ebf7;border-radius:14px;}
+.menu-lines{height:19px;width:21px;display:flex;flex-direction:column;justify-content:space-between;}
+.menu-lines span{height:2px;width:100%;border-radius:3px;display:block;transition:transform .2s,opacity .2s;}
+.menu-btn[aria-expanded="true"] .menu-lines span:nth-child(1){transform:translateY(8.5px) rotate(45deg);}
+.menu-btn[aria-expanded="true"] .menu-lines span:nth-child(2){opacity:0;}
+.menu-btn[aria-expanded="true"] .menu-lines span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg);}
+.hero{position:relative;border-bottom:1px solid #d6ebfa;}
+.hero:before{position:absolute;}
+.hero:after{position:absolute;content:"";width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.6),transparent 70%);left:-160px;bottom:-230px;}
+.hero-inner{display:grid;align-items:center;padding:75px 0 81px;position:relative;z-index:1;}
+h1,h2,h3,p{margin-top:0;}
+.hero h1{margin:0 0 22px;}
+.hero-lead{font-size:16px;line-height:1.94;max-width:510px;margin:0;}
+.hero-trust{display:flex;flex-wrap:wrap;margin-top:27px;font-size:12px;font-weight:730;}
+.hero-trust span{display:inline-flex;align-items:center;gap:6px;}
+.phone-stage{width:min(100%,378px);justify-self:end;position:relative;}
+.phone-stage:before{position:absolute;content:"";inset:38px -22px -13px;background:rgba(74,153,212,.21);filter:blur(37px);border-radius:50%;}
+.phone{position:relative;transform:none;}
+.phone-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:16px;}
+.phone-top .eng{letter-spacing:.065em;font-weight:750;}
+.phone-top b{font-size:14px;font-weight:900;letter-spacing:-.036em;}
+.app-pill{border-radius:8px;padding:6px 9px;font-size:10px;font-weight:900;}
+.map-art{height:178px;overflow:hidden;position:relative;border-radius:18px;border:1px solid #d0eafa;}
+.map-art:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 47%,#fff 47% 52%,transparent 52%),linear-gradient(0deg,transparent 47%,#fff 47% 53%,transparent 53%);background-size:90px 87px;opacity:.9;}
+.map-park{position:absolute;background:#d2f1e2;border-radius:11px;opacity:.85;}
+.map-park.one{width:103px;height:56px;left:10px;top:17px;}
+.map-park.two{width:85px;height:55px;right:5px;bottom:10px;}
+.map-building{position:absolute;background:#d4e6f1;border:1px solid #c6dfed;border-radius:5px;}
+.map-building.one{width:40px;height:26px;top:24px;right:66px;}
+.map-building.two{width:43px;height:27px;bottom:19px;left:89px;}
+.map-route{position:absolute;inset:0;width:100%;height:100%;}
+.map-label{position:absolute;background:white;border-radius:100px;padding:5px 10px;box-shadow:0 5px 14px rgba(38,109,156,.13);font-size:10px;font-weight:850;}
+.map-label.start{left:17px;bottom:28px;}
+.map-label.end{right:13px;top:21px;}
+.phone-card{border-radius:16px;padding:16px;margin-top:13px;border:1px solid #e4f3fb;}
+.phone-card-head{display:flex;align-items:center;gap:7px;font-size:11px;color:#318aba;font-weight:850;margin-bottom:6px;}
+.phone-card h3{font-size:17px;font-weight:850;letter-spacing:-.05em;margin-bottom:5px;color:#28658e;}
+.phone-card p{font-size:12px;line-height:1.7;margin:0;}
+.phone-steps{display:flex;gap:6px;align-items:center;justify-content:space-between;margin-top:15px;}
+.phone-step{font-size:10px;font-weight:750;display:flex;align-items:center;gap:5px;}
+.phone-dot{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;font-style:normal;font-weight:900;}
+.phone-arrow{color:#9bbbd0;}
+.main{padding:66px 0 42px;}
+.section-kicker{font-weight:900;margin-bottom:8px;}
+.section-title{font-weight:900;margin-bottom:8px;}
+.section-desc{font-size:14px;margin-bottom:0;}
+.section-head{margin-bottom:23px;}
+.step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+.step-item{background:#fff;}
+.step-no{color:#3e9acf;margin-bottom:18px;}
+.step-icon{display:grid;place-items:center;border-radius:15px;color:#2789c5;margin-bottom:15px;}
+.step-item h3{font-size:16px;font-weight:900;letter-spacing:-.044em;margin-bottom:7px;}
+.step-item p{font-size:12px;line-height:1.77;margin:0;}
+.footer{padding:30px 0;}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+.footer strong{font-size:14px;}
+.footer p{font-size:11px;color:#7592a6;line-height:1.85;margin:8px 0 0;}
+.footer-note{font-size:11px;color:#7592a6;text-align:right;max-width:240px;}
+.footer-note a{text-underline-offset:3px;}
+.bottom-bar{position:fixed;z-index:30;bottom:0;left:0;right:0;display:flex;gap:12px;align-items:center;justify-content:center;padding:12px max(24px,calc((100vw - 1060px)/2)) calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(12px);}
+.bottom-apply{flex:1;max-width:710px;border:0;min-height:53px;display:inline-flex;align-items:center;justify-content:center;gap:9px;color:white;font-weight:900;font-size:15px;box-shadow:0 6px 18px rgba(33,131,202,.2);}
+.drawer-backdrop,.modal-backdrop{position:fixed;inset:0;background:rgba(20,64,94,.34);opacity:0;transition:opacity .23s;pointer-events:none;}
+.drawer-backdrop{z-index:40;}
+.drawer-backdrop.is-open{opacity:1;pointer-events:auto;}
+.drawer{position:fixed;z-index:41;right:0;top:0;bottom:0;width:min(390px,100%);transform:translateX(105%);transition:transform .25s ease;box-shadow:-20px 0 65px rgba(19,66,111,.17);display:flex;flex-direction:column;overflow-y:auto;padding-top:env(safe-area-inset-top);}
+.drawer.is-open{transform:translateX(0);}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:25px 24px 21px;border-bottom:1px solid #e3f0f8;}
+.drawer-head-title{color:#256b99;font-weight:900;font-size:20px;letter-spacing:-.05em;}
+.close-btn{border:1px solid #dcecf6;border-radius:12px;background:#fff;color:#386f98;width:39px;height:39px;display:grid;place-items:center;flex:none;}
+.drawer-home{padding:20px 20px;}
+.menu-item{display:flex;align-items:center;gap:14px;width:100%;min-height:67px;text-align:left;border:1px solid #e5eff7;border-radius:15px;background:#fff;color:#2c6994;margin-bottom:12px;padding:14px 15px;font-weight:850;font-size:15px;}
+.menu-item:hover{border-color:#cde9fb;}
+.menu-icon{width:38px;height:38px;display:grid;place-items:center;flex:none;background:#e8f6ff;border-radius:11px;color:#258cc8;}
+.menu-item .chevron{margin-left:auto;color:#a3bccd;}
+.drawer-detail{padding:19px 22px 28px;}
+.drawer-detail .back-btn{border:0;background:none;padding:3px 0 18px;color:#307dad;font-size:13px;font-weight:850;display:flex;align-items:center;gap:7px;}
+.drawer-detail h2{font-size:21px;line-height:1.35;letter-spacing:-.05em;color:#1e6596;margin:0 0 14px;}
+.drawer-detail a{color:#207bbc;text-underline-offset:3px;}
+.faq-list details{border:1px solid #e3eef6;border-radius:12px;padding:12px 13px;margin-bottom:10px;background:#f9fdff;}
+.faq-list summary{font-weight:850;color:#316a93;font-size:13px;cursor:pointer;line-height:1.5;}
+.faq-list .faq-answer{color:#6a879a;font-size:12px;line-height:1.8;padding-top:9px;}
+.detail-card{background:#f2faff;border:1px solid #deeffb;border-radius:14px;padding:17px;color:#486f8f;font-size:13px;line-height:1.8;}
+.detail-card strong{display:block;color:#275f8d;font-size:14px;margin-bottom:7px;}
+.modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal-backdrop{z-index:0;opacity:1;pointer-events:auto;}
+.modal-box{position:relative;z-index:1;width:min(500px,100%);max-height:92dvh;overflow:auto;border-radius:25px;padding:30px 30px 26px;box-shadow:0 25px 80px rgba(22,76,121,.23);}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:13px;}
+.modal-kicker{color:#3e9acf;font-size:11px;font-weight:900;letter-spacing:.1em;}
+.modal-head h2{font-size:25px;line-height:1.3;letter-spacing:-.055em;color:#216894;margin:6px 0 0;}
+.modal-desc{font-size:13px;color:#6e8b9e;line-height:1.8;margin:0 0 15px;}
+.modal-info{padding:14px 15px;background:#f1faff;border:1px solid #dfeff9;border-radius:13px;font-size:12px;color:#65869c;line-height:1.8;margin-bottom:17px;}
+.modal-info b{color:#2a729f;display:block;margin-bottom:2px;}
+.check-line{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#506f84;margin:14px 0;cursor:pointer;}
+.check-line input{width:18px;height:18px;accent-color:#218ccf;flex:none;margin-top:2px;}
+.go-btn{width:100%;border:0;border-radius:13px;background:#2289ce;color:#fff;padding:14px 15px;min-height:51px;font-size:14px;font-weight:900;margin-top:9px;}
+.go-btn:disabled{background:#b4d5e8;cursor:not-allowed;}
+.form-status{margin-top:10px;padding:10px;border-radius:10px;background:#fff7ee;color:#a66035;font-size:12px;line-height:1.7;}
+.modal-small{color:#859eaf;font-size:11px;line-height:1.7;margin:10px 0 0;}
+.toast{position:fixed;z-index:100;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);padding:11px 15px;background:#235a7e;color:white;border-radius:13px;box-shadow:0 13px 30px rgba(17,78,123,.18);font-size:12px;text-align:center;}
+body.is-locked{overflow:hidden;}
+@media (max-width:880px){
+  .hero-inner{gap:28px;}
+  .hero h1{font-size:40px;}
+  .phone-stage{width:min(100%,345px);}
+  .phone{padding:15px;}
+}
+@media (max-width:700px){
+  body{padding-bottom:92px;}
+  .wrap{width:min(100% - 36px,500px);}
+  .header-inner{height:auto;min-height:68px;padding-block:8px;gap:7px;}
+  .brand-mark{width:40px;height:40px;border-radius:12px;}
+  .brand-title{font-size:15px;line-height:1.22;overflow-wrap:anywhere;}
+  .brand-caption{font-size:9px;}
+  .brand{gap:8px;flex:1;min-width:0;}
+  .brand-txt{flex:1;}
+  .header-actions{gap:6px;}
+  .lang-picker{height:42px;padding:0 7px;max-width:120px;}
+  .lang-picker svg{width:15px;height:15px;}
+  .lang-picker select{width:88px;max-width:88px;font-size:11px;padding-right:8px;}
+  .lang-picker .select-chevron{right:5px;}
+  .menu-btn{width:42px;height:42px;border-radius:12px;}
+  .brand-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .brand-caption{display:block;}
+  .brand-title-full{display:none;}
+  .brand-title-short{display:inline;}
+  .hero-lead{font-size:14px;line-height:1.85;}
+  .hero-trust{font-size:11px;gap:10px 17px;margin-top:20px;}
+  .phone-stage{width:min(100% - 20px,330px);justify-self:center;}
+  .phone{padding:17px;border-radius:26px;}
+  .main{padding:44px 0 36px;}
+  .section-title{font-size:27px;}
+  .section-desc{font-size:13px;}
+  .section-head{margin-bottom:17px;}
+  .step-grid{gap:11px;}
+  .step-item{border-radius:16px;}
+  .step-no{font-size:10px;margin-bottom:10px;}
+  .step-icon{width:43px;height:43px;border-radius:12px;margin-bottom:12px;}
+  .step-item h3{font-size:14px;}
+  .step-item p{font-size:11px;}
+  .footer-inner{display:block;}
+  .footer-note{text-align:left;margin-top:16px;}
+  .bottom-bar{padding:10px 15px calc(10px + env(safe-area-inset-bottom));gap:9px;}
+  .bottom-apply{min-height:51px;font-size:14px;}
+  .modal{align-items:flex-end;padding:0;}
+  .modal-box{width:100%;border-radius:24px 24px 0 0;padding:25px 22px calc(24px + env(safe-area-inset-bottom));max-height:92dvh;}
+}
+@media (max-width:375px){
+  .wrap{width:calc(100% - 24px);}
+  .brand-mark{width:37px;height:37px;}
+  .brand-title{font-size:13px;}
+  .lang-picker{max-width:109px;}
+  .lang-picker select{max-width:79px;width:79px;font-size:10px;}
+  .menu-btn{width:40px;height:40px;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
+body{background:var(--theme-bg);color:var(--theme-ink);}
+.header{background:var(--theme-bg);border-color:var(--theme-border);}
+.brand-title{color:var(--theme-ink);}
+.brand-caption{color:var(--theme-accent);}
+.brand-mark{border-color:var(--theme-border);}
+.lang-picker{border-color:var(--theme-border);box-shadow:none;background:#fff;color:var(--theme-accent);}
+.lang-picker select{color:var(--theme-ink);}
+.menu-btn{border-color:var(--theme-border);box-shadow:none;background:#fff;}
+.menu-lines span{background:var(--theme-accent);}
+.hero{border-color:var(--theme-border);}
+.hero h1{color:var(--theme-ink);}
+.hero-lead{color:var(--theme-ink);}
+.hero-trust{color:var(--theme-ink);}
+.hero-trust svg{color:var(--theme-accent);}
+.phone{background:#fff;border-color:var(--theme-border);}
+.phone-top b{color:var(--theme-ink);}
+.phone-top .eng{color:var(--theme-accent);}
+.app-pill{color:var(--theme-accent);background:var(--theme-soft);}
+.map-art{border-color:var(--theme-border);background:var(--theme-soft);}
+.map-label{color:var(--theme-accent);}
+.phone-card{background:var(--theme-light);border-color:var(--theme-border);}
+.phone-card-head,.phone-card h3{color:var(--theme-accent);}
+.phone-card p{color:var(--theme-ink);}
+.phone-step{color:var(--theme-ink);}
+.phone-dot{background:var(--theme-soft);color:var(--theme-accent);}
+.section-kicker{color:var(--theme-accent);}
+.section-title{color:var(--theme-ink);}
+.section-desc{color:var(--theme-ink);}
+.step-item{border-color:var(--theme-border);}
+.step-no,.step-icon{color:var(--theme-accent);}
+.step-item h3{color:var(--theme-ink);}
+.step-item p{color:var(--theme-ink);}
+.footer{border-color:var(--theme-border);}
+.footer strong{color:var(--theme-ink);}
+.footer p,.footer-note{color:var(--theme-ink);}
+.footer-note a{color:var(--theme-accent);}
+.bottom-bar{background:rgba(255,255,255,.97);border-color:var(--theme-border);}
+.bottom-apply,.go-btn{background:var(--theme-accent);box-shadow:none;}
+.bottom-apply:hover{filter:brightness(.95);background:var(--theme-accent);}
+.drawer{background:var(--theme-bg);}
+.drawer-head,.menu-item{border-color:var(--theme-border);}
+.drawer-head-title,.menu-item,.drawer-detail h2{color:var(--theme-ink);}
+.menu-icon,.detail-card,.modal-info{background:var(--theme-soft);color:var(--theme-accent);border-color:var(--theme-border);}
+.menu-item:hover{background:var(--theme-light);}
+.modal-box{background:var(--theme-bg);}
+.modal-kicker,.modal-head h2{color:var(--theme-accent);}
+@media (max-width:700px){
+  .hero-inner{padding:42px 0 48px;}
+  .hero h1{margin-bottom:14px;}
+  .main{padding-top:37px;}
+}
+:root{--theme-accent:#1c52b7;--theme-ink:#102a42;--theme-light:#f9fafc;--theme-bg:#ffffff;--theme-soft:#edf2fa;--theme-border:#cad1dd;--theme-shadow:rgba(8,28,48,.06);}
+.header{border-bottom:2px solid #173c6c;backdrop-filter:none;}
+.brand-mark{border-radius:0;background:#1c52b7;color:white;border:0;}
+.brand-caption{letter-spacing:.12em;text-transform:uppercase;}
+.lang-picker,.menu-btn{border-radius:0;border-color:#aab8ce;}
+.hero{background:#fafbfe;overflow:hidden;}
+.hero:before{content:"";top:0;right:-80px;width:360px;height:100%;background:#123e7f;border:none;box-shadow:none;border-radius:0;opacity:.05;}
+.hero:after{display:none;}
+.hero-inner{grid-template-columns:minmax(0,1.1fr) minmax(320px,.75fr);gap:45px;}
+.hero h1{font-size:clamp(41px,5vw,68px);line-height:1.2;letter-spacing:-.085em;font-weight:900;}
+.hero h1 strong{color:#1c52b7;}
+.hero-lead{border-left:4px solid #ffcb4b;padding-left:17px;}
+.hero-trust{gap:11px;}
+.hero-trust span{font-size:11px;text-transform:uppercase;letter-spacing:-.01em;}
+.phone{border-radius:2px;border:1px solid #142f52;padding:16px;box-shadow:11px 11px 0 #d6e4f5;}
+.phone-stage:before{display:none;}
+.map-art,.phone-card,.app-pill{border-radius:0;}
+.phone-card{border-left:4px solid #1c52b7;}
+.section-kicker{font-size:11px;letter-spacing:.2em;}
+.section-title{font-size:35px;letter-spacing:-.075em;}
+.step-grid{gap:0;border-top:2px solid #183657;border-bottom:2px solid #183657;}
+.step-item{border:0;border-right:1px solid #d4dbe7;border-radius:0;box-shadow:none;padding:22px 19px;min-height:215px;}
+.step-item:last-child{border-right:0;}
+.step-no{font-weight:900;font-size:12px;}
+.step-icon{background:none;width:42px;height:42px;margin-top:10px;}
+.bottom-bar{border-top:2px solid #142f52;box-shadow:none;}
+.bottom-apply{border-radius:0;background:#1c52b7;}
+.footer{background:#f0f3f9;border-top:1px solid #b6c4d8;}
+@media (max-width:880px){
+  .hero-inner{grid-template-columns:1fr .8fr;}
+}
+@media (max-width:700px){
+  .hero-inner{grid-template-columns:1fr;gap:28px;}
+  .hero h1{font-size:40px;}
+  .hero{background:linear-gradient(90deg,#fff,#edf3ff);}
+  .step-grid{display:grid;grid-template-columns:repeat(2,1fr);}
+  .step-item{border-bottom:1px solid #d4dbe7;min-height:198px;padding:18px 12px;}
+  .step-item:nth-child(even){border-right:0;}
+  .step-item:nth-child(n/**/+3){border-bottom:0;}
+}
+.hero .phone{overflow:hidden;}
+.phone-top .eng{font-size:10px;}
+.hero-copy{position:relative;min-width:0;overflow:hidden;isolation:isolate;padding:34px 34px 288px;align-self:stretch;}
+.hero-copy-content{position:relative;z-index:2;}
+.hero-copy .hero-illustration{position:absolute!important;z-index:0;inset:auto 0 0 0!important;display:block;margin:0!important;padding:0;border:0!important;border-radius:0!important;box-shadow:none!important;width:100%;height:295px;overflow:hidden;pointer-events:none;background:transparent!important;}
+.hero-copy .hero-illustration img{display:block;width:100%;height:100%!important;object-fit:cover;object-position:50% 34%;filter:none!important;}
+.hero-copy .hero-illustration::before{content:"";position:absolute;z-index:1;inset:-1px 0 0;background:linear-gradient(180deg,var(--hero-fade,#e6f1fc) 0%,rgba(255,255,255,0) 36%);pointer-events:none;}
+.hero-copy .hero-illustration img{max-height:none;}
+@media (max-width:880px){
+  .hero-copy{padding:25px 24px 254px;}
+  .hero-copy .hero-illustration{height:265px;}
+}
+@media (max-width:700px){
+  .hero-copy{padding:26px 25px 270px;}
+  .hero-copy .hero-illustration{height:270px;}
+}
+@media (max-width:390px){
+  .hero-copy{padding:22px 20px 250px;}
+  .hero-copy .hero-illustration{height:252px;}
+}
+.hero-copy{background:linear-gradient(145deg,#f7fbff 0%,#dbeaff 100%);border:0;border-left:6px solid #2a6fad;border-radius:0;box-shadow:8px 8px 0 #dce6f0;--hero-fade:#f7fbff;}
+.hero-copy .hero-slideshow{position:absolute;overflow:hidden;isolation:isolate;pointer-events:auto;}
+.hero-copy .hero-slideshow .slide-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%;opacity:0;transform:translateX(12px) scale(1.02);transition:opacity 1100ms ease-in-out,transform 1600ms ease-in-out;pointer-events:none;}
+.hero-copy .hero-slideshow .slide-image.is-active{opacity:1;transform:translateX(0) scale(1);}
+.hero-copy .hero-slideshow .slide-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:40px 22px;background:linear-gradient(145deg,rgba(255,255,255,.38),rgba(255,255,255,.12));font-size:12px;color:var(--theme-accent);z-index:0;}
+.hero-copy .hero-slideshow::before{z-index:2;pointer-events:none;}
+.contact-btn{border:1px solid #198451;background:#188b56;color:#fff;min-height:53px;min-width:125px;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;font-weight:900;font-size:14px;cursor:pointer;}
+.contact-btn:hover{background:#0c7444;}
+.contact-btn:focus-visible{outline:3px solid #65b990;outline-offset:3px;}
+.sms-fields{display:grid;gap:10px;margin:14px 0 17px;}
+.sms-field{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:760;color:var(--theme-ink);}
+.sms-field input,.sms-field textarea{width:100%;min-width:0;min-height:42px;padding:10px 11px;font:inherit;font-weight:500;font-size:13px;line-height:1.45;color:var(--theme-ink);background:#fff;border:1px solid var(--theme-border);border-radius:10px;outline-offset:2px;}
+.sms-field textarea{resize:vertical;}
+.sms-field input:focus-visible,.sms-field textarea:focus-visible{outline:2px solid var(--theme-accent);}
+.sms-field-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;}
+.sms-copy{border:1px solid var(--theme-border);background:var(--theme-soft);color:var(--theme-ink);border-radius:10px;min-height:36px;padding:7px 12px;justify-self:start;font-size:12px;font-weight:800;}
+#sms-preview{background:var(--theme-light);font-size:12px;line-height:1.6;}
+@media (max-width:700px){
+  .contact-btn{min-height:51px;min-width:104px;padding:0 10px;font-size:13px;}
+  .sms-field-row{gap:8px;}
+}
+@media (max-width:375px){
+  .sms-field-row{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-copy .hero-slideshow .slide-image{transition:none;}
+}
+  
+/* 더블탭 금지요 */
+html,body{touch-action:manipulation;-webkit-text-size-adjust:100%;}
+/* 경찰서 로고 */
+.brand-logo{display:block;flex:none;width:44px;height:44px;object-fit:contain;border:0;border-radius:0;background:transparent;transform:none;}
+/* 날짜 및 시간 가로 폭 정렬요 */
+.sms-field-row{grid-template-columns:minmax(0,1fr);}
+.sms-field-row .sms-field,.sms-field-row input{min-width:0;min-inline-size:0;max-width:100%;width:100%;}
+@media(max-width:700px){
+.brand-logo{width:40px;height:40px;}
+/* 자동확대 금지 */
+.sms-field input,.sms-field textarea{font-size:16px;}
+}
+@media(max-width:375px){.brand-logo{width:37px;height:37px;}}
+
+/* 태국어 깨지지마 */
+html[lang="th"] .hero h1 {
+  font-size: clamp(27px, 6.6vw, 43px);
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+html[lang="th"] .hero-copy-content,
+html[lang="th"] .phone-card,
+html[lang="th"] .step-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+html[lang="th"] .hero-lead,
+html[lang="th"] .section-desc,
+html[lang="th"] .step-item p {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* 태국어 깨지지마 */
+html[lang="th"] .brand-title {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+/* 날짜·시간입력칸 수정 */
+.sms-fields {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.sms-field-row {
+  display: contents;
+}
+
+.sms-field-row .sms-field {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+#sms-date,
+#sms-time {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-inline-size: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="우리동네 안심귀가 동행">
+        <span class="brand-mark" id="brand-mark" aria-hidden="true">
+          <svg id="brand-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m8.5 12 2.3 2.3 4.8-4.8"/></svg>
+        </span>
+        <img id="brand-image" class="brand-logo" alt="경찰서 로고" hidden>
+        <span class="brand-txt"><span class="brand-title"><span class="brand-title-full">우리동네 안심귀가 동행</span><span class="brand-title-short">우리동네 안심귀가 동행</span></span><span class="brand-caption" id="org-subtitle">신청 서비스</span></span>
+      </a>
+      <div class="header-actions">
+        <label class="lang-picker" for="lang-select">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          <span class="sr-only" id="lang-label">언어 선택</span>
+          <select id="lang-select" aria-labelledby="lang-label" title="언어 선택">
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="th">🇹🇭 ภาษาไทย</option>
+            <option value="uz">🇺🇿 Oʻzbekcha</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="mn">🇲🇳 Монгол</option>
+          </select>
+          <span class="select-chevron" aria-hidden="true">⌄</span>
+        </label>
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="전체 메뉴 열기" aria-controls="side-menu" aria-expanded="false"><span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="hero-copy-content">
+          <h1 id="hero-title">혼자 걷는 귀갓길,<br><strong>함께할 수 있어요.</strong></h1>
+          <p class="hero-lead">늦은 시간 귀가가 걱정될 때, 자율방범대의 귀가 동행 서비스를 신청해 보세요. 문자로 간편하게 신청할 수 있습니다.</p>
+          <div class="hero-trust"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>앱 설치 없이 이용</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 17h6"/></svg>신청정보는 문자로 전송</span></div>
+          </div>
+          <div class="hero-illustration hero-slideshow" id="hero-slideshow" role="region" aria-roledescription="carousel" aria-label="안심귀가 그림 슬라이드">
+            <div class="slide-placeholder" id="slide-placeholder">그림 이미지 주소</div>
+            <img class="slide-image is-active" id="slide-image-1" alt="안심귀가 안내 그림 하나" decoding="async" loading="eager" hidden>
+            <img class="slide-image" id="slide-image-2" alt="안심귀가 안내 그림 둘" decoding="async" loading="eager" hidden>
+          </div>
+        </div>
+        <div class="phone-stage" aria-label="동행 서비스 평면 지도">
+          <div class="phone">
+            <div class="phone-top"><div><span class="eng">GOOD EVENING</span><br><b>오늘도 안전한 귀갓길</b></div><span class="app-pill">SAFE WALK</span></div>
+            
+            <div class="map-art" aria-label="실제 지도 아님" role="img">
+              <span class="map-park one"></span><span class="map-park two"></span><span class="map-building one"></span><span class="map-building two"></span>
+              <svg class="map-route" viewBox="0 0 350 178" fill="none" aria-hidden="true"><path d="M72 129H148V93H217V51H282" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 129H148V93H217V51H282" stroke="#36a6dd" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10"/><circle cx="72" cy="129" r="12" fill="#fff"/><circle cx="72" cy="129" r="7" fill="#258fce"/><circle cx="282" cy="51" r="15" fill="#fff"/><path d="M282 38c-7 0-11 5-11 11 0 8 11 17 11 17s11-9 11-17c0-6-5-11-11-11Z" fill="#1779bb"/><circle cx="282" cy="49" r="4" fill="#fff"/></svg>
+              <span class="map-label start">도착지</span><span class="map-label end">만나는 장소</span>
+            </div>
+            <div class="phone-card"><div class="phone-card-head">안심귀가 동행 안내</div><h3>함께하는 귀가, 든든한 발걸음</h3><p>신청 후 담당자가 동행 가능 여부를 확인하고 연락드립니다.</p></div>
+            <div class="phone-steps"><span class="phone-step"><i class="phone-dot">1</i>신청</span><span class="phone-arrow">→</span><span class="phone-step"><i class="phone-dot">2</i>확인·연락</span><span class="phone-arrow">→</span><span class="phone-step"><i class="phone-dot">3</i>동행</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="wrap main">
+      <section id="process" aria-labelledby="process-title">
+        <div class="section-head"><div class="section-kicker">HOW IT WORKS</div><h2 class="section-title" id="process-title">이렇게 이용하세요</h2><p class="section-desc">QR코드로 접속한 뒤 절차에 따라 신청할 수 있습니다.</p></div>
+        <div class="step-grid">
+          <article class="step-item"><div class="step-no">STEP 01</div><div class="step-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM21 14v3m-4 4h4"/></svg></div><h3>QR 접속</h3><p>QR코드로 시민용 웹페이지에 접속합니다.</p></article>
+          <article class="step-item"><div class="step-no">STEP 02</div><div class="step-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>문자로 신청</h3><p>희망 시간과 지정된 만남 장소 등을 문자로 신청합니다.</p></article>
+          <article class="step-item"><div class="step-no">STEP 03</div><div class="step-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8A8.5 8.5 0 0 1 12.5 20a8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3H13a8.5 8.5 0 0 1 8 8.5Z"/></svg></div><h3>담당자 확인</h3><p>경찰 담당자가 신청 내용을 확인하고 동행 가능 여부를 안내합니다.</p></article>
+          <article class="step-item"><div class="step-no">STEP 04</div><div class="step-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2"/><path d="m8 9-2 5 3 2-1 5m1-9 3 2 2 7M16 21v-7m-3-3h6m-3-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></svg></div><h3>동행 귀가</h3><p>배정이 확정되면 안내받은 장소에서 대원과 동행합니다.</p></article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><strong>우리동네 안심귀가 동행</strong><p id="footer-org">신청 정보는 이 웹페이지에 저장되지 않습니다.</p></div><div class="footer-note">Copyright By. 전남경찰청 영암경찰서 범죄예방대응과</div></div></footer>
+
+  <div class="bottom-bar" aria-label="하단 빠른 메뉴">
+    <button type="button" class="bottom-apply" id="open-apply"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>안심귀가 신청하기</button>
+    <button type="button" class="contact-btn" id="contact-btn" aria-label="문의하기"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.7 3a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 5.9 5.9l1.3-1.3a2 2 0 0 1 2.1-.5l3 .7a2 2 0 0 1 1.7 2Z"/></svg><span id="contact-label">문의하기</span></button>
+  </div>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="side-menu" role="dialog" aria-modal="true" aria-label="전체 메뉴" aria-hidden="true" inert>
+    <div class="drawer-head"><strong class="drawer-head-title">전체 메뉴</strong><button class="close-btn" id="close-menu" type="button" aria-label="메뉴 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="drawer-home" id="drawer-home">
+      <button type="button" class="menu-item" id="drawer-share"><span class="menu-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.8 10.7 6.4-4.2M8.8 13.3l6.4 4.2"/></svg></span>공유하기 <span class="chevron">›</span></button>
+      <button type="button" class="menu-item" data-drawer-view="faq"><span class="menu-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.7 2c-1.2.9-1.5 1.5-1.5 2.5M12 17h.01"/></svg></span>자주 묻는 질문 <span class="chevron">›</span></button>
+      <button type="button" class="menu-item" data-drawer-view="contact"><span class="menu-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.7 3a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 5.9 5.9l1.3-1.3a2 2 0 0 1 2.1-.5l3 .7a2 2 0 0 1 1.7 2Z"/></svg></span>담당자 <span class="chevron">›</span></button>
+      <button type="button" class="menu-item" data-drawer-view="creator"><span class="menu-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span>만든이 <span class="chevron">›</span></button>
+    </div>
+    <div class="drawer-detail" id="drawer-detail" hidden>
+      <button type="button" class="back-btn" id="drawer-back">← 메뉴로 돌아가기</button>
+      <h2 id="drawer-detail-title">자주 묻는 질문</h2>
+      <div id="drawer-detail-body"></div>
+    </div>
+  </aside>
+
+  <div class="modal" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box" id="modal-box" tabindex="-1">
+      <div class="modal-head"><div><div class="modal-kicker">문자 신청</div><h2 id="modal-title">신청 전 확인해 주세요</h2></div><button class="close-btn" type="button" id="modal-close" aria-label="닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <p class="modal-desc" id="modal-desc">안내사항을 확인하고 신청 내용을 작성하면 문자 앱을 열 수 있습니다.</p>
+      <div class="modal-info"><b>안심귀가 서비스 안내</b><div id="modal-area-info">운영 지역: 전남 영암군(추후 전국 확대 예정)</div><div id="modal-hours-info">운영 시간: 경찰서 안내 확인</div><div>신청 뒤 담당자가 확인 후 연락드립니다.</div></div>
+      <p id="form-language-notice" class="form-status">문자 앱에서 직접 전송해야 신청이 완료됩니다.</p>
+      <div class="sms-fields" id="sms-fields">
+        <label class="sms-field"><span id="sms-label-name">이름 또는 별칭 (선택)</span><input id="sms-name" type="text" maxlength="30" autocomplete="nickname" placeholder="이름 또는 별칭"></label>
+        <div class="sms-field-row">
+          <label class="sms-field"><span id="sms-label-date">희망 날짜</span><input id="sms-date" type="date" required></label>
+          <label class="sms-field"><span id="sms-label-time">희망 시간</span><input id="sms-time" type="time" required></label>
+        </div>
+        <label class="sms-field"><span id="sms-label-meeting">만남 장소</span><input id="sms-meeting" type="text" maxlength="100" autocomplete="off" required placeholder="예: ○○건물 앞"></label>
+        <label class="sms-field"><span id="sms-label-destination">귀가 지역 (선택)</span><input id="sms-destination" type="text" maxlength="100" autocomplete="off" placeholder="정확한 집 주소 대신 동·권역만 입력"></label>
+        <label class="sms-field"><span id="sms-label-phone">회신 연락처 (선택)</span><input id="sms-phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="예: 010-1234-5678"></label>
+        <label class="sms-field"><span id="sms-label-notes">기타 요청 (선택)</span><textarea id="sms-notes" maxlength="200" rows="2" placeholder="필요한 내용만 작성"></textarea></label>
+        <label class="sms-field"><span id="sms-label-preview">작성된 문자 내용</span><textarea id="sms-preview" readonly rows="6" aria-label="문자 내용 미리보기"></textarea></label>
+        <button class="sms-copy" type="button" id="sms-copy">문자 내용 복사</button>
+      </div>
+      <label class="check-line"><input type="checkbox" id="check-scope"><span>운영 지역·시간을 확인했습니다.</span></label>
+
+<label class="check-line">
+  <input type="checkbox" id="check-privacy">
+  <span>[필수] 안심귀가 동행 신청을 위한 개인정보 수집·이용 및 문자 전송에 동의합니다.</span>
+</label>
+<p class="modal-small" id="privacy-details">
+  수집·이용 목적: 신청 확인, 연락 및 동행 조정
+  / 항목: 신청서에 입력한 이름·연락처·일시·장소 등
+  / 문자 수신자: 지정된 경찰서 담당자
+  / 웹페이지에는 입력 내용이 저장되지 않습니다.
+</p>
+      <button type="button" class="go-btn" id="form-go" disabled>문자 앱 열기 →</button>
+      <div class="form-status" id="form-status" role="status" hidden>문자 수신번호를 등록해야 신청할 수 있습니다.</div>
+      <p class="modal-small">이 페이지는 입력 내용을 저장하지 않습니다. 문자에서 내용을 확인한 뒤 직접 전송해주세요.</p>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <audio id="bg-music" loop preload="auto" aria-hidden="true"></audio>
+
+  <script>
+  'use strict';
+  const CONFIG = {
+    // 슬라이드 이미지 두장
+    image1Url: 'https://koreapolkim.github.io/9/p.png',       // 1번 이미지 주소
+    image2Url: 'https://koreapolkim.github.io/9/p2.png',       // 2번 이미지 주소
+    slideIntervalMs: 5000, // 5초 간격으로 이미지 전환
+    // 배경음악
+    musicUrl: 'https://koreapolkim.github.io/w/m.mp3',        // 음악 주소
+    musicVolume: 0.79,  // 배경음악 볼륨 0~1
+    // 수신 전화번호
+    smsRecipient: '01074890482',    // 경찰서 담당 업무폰
+    localized: {
+      en:{organization:'',serviceArea:"Yeongam-gun, Jeollanam-do (planned expansion nationwide)",operatingHours:"Check with the police station",creatorName:''},
+      zh:{organization:'',serviceArea:"全罗南道灵岩郡（计划今后扩大至全国）",operatingHours:"请查看警察署公告",creatorName:''},
+      vi:{organization:'',serviceArea:"Huyện Yeongam, tỉnh Jeollanam (dự kiến mở rộng trên toàn quốc)",operatingHours:"Kiểm tra thông báo của đồn cảnh sát",creatorName:''},
+      th:{organization:'',serviceArea:"อำเภอยองอัม จังหวัดช็อลลานัมโด (มีแผนขยายบริการทั่วประเทศในอนาคต)",operatingHours:"โปรดตรวจสอบประกาศของสถานีตำรวจ",creatorName:''},
+      uz:{organization:'',serviceArea:"Jeollanam-do viloyatining Yeongam tumani (kelgusida butun mamlakatga kengaytirish rejalashtirilgan)",operatingHours:"Politsiya bo‘limi ma’lumotini tekshiring",creatorName:''},
+      ru:{organization:'',serviceArea:"Уезд Йонам, провинция Чолла-Намдо (в дальнейшем планируется расширение на всю страну)",operatingHours:"Уточните по информации полицейского участка",creatorName:''},
+      mn:{organization:'',serviceArea:"Чолла-Намдо мужийн Ёнъам хошуу (цаашид улс даяар өргөжүүлэхээр төлөвлөсөн)",operatingHours:"Цагдаагийн хэлтсийн мэдээллийг шалгана уу",creatorName:''}
+    },
+    logoImageUrl: 'https://koreapolkim.github.io/w/y.png',
+    organization: '',
+    serviceArea: '전남 영암군(추후 전국 확대 예정)',
+    operatingHours: '경찰서 안내 확인',
+    contactPhone: '',
+    creatorName: ''
+  };
+  /* ============================================================
+     설정칸
+     ============================================================ */
+  const MAIN_TEXT = {
+    brand: "우리동네 안심귀가 동행", 
+    subtitle: "신청 서비스", 
+    headingLine1: "혼자 걷는 귀갓길,",
+    headingLine2: "함께할 수 있어요.",
+    introduction: "늦은 시간 귀가가 걱정될 때, 자율방범대의 귀가 동행 서비스를 신청해 보세요. 신청 절차를 확인하고 문자로 간편하게 신청할 수 있습니다.",
+    feature1: "앱 설치 없이 이용",
+    feature2: "신청정보는 문자로 전송",
+    mapEyebrow: "GOOD EVENING",
+    mapHeadline: "오늘도 안전한 귀갓길",
+    mapPill: "SAFE WALK",
+    mapLabelStart: "도착지",
+    mapLabelMeeting: "만나는 장소",
+    mapGuide: "안심귀가 동행 안내",
+    mapTitle: "함께하는 귀가, 든든한 발걸음",
+    mapDescription: "신청 후 담당자가 동행 가능 여부를 확인하고 연락드립니다.",
+    mapSteps: ["신청", "확인·연락", "동행"],
+    processEyebrow: "HOW IT WORKS",
+    processTitle: "이렇게 이용하세요",
+    processDescription: "QR코드로 접속한 뒤 아래 절차에 따라 신청할 수 있습니다.",
+    stepTitles: ["QR 접속", "문자로 신청", "담당자 확인", "동행 귀가"],
+    stepDescriptions: ["QR코드로 신청페이지에 접속합니다.", "희망 시간과 지정된 만남 장소 등을 작성해 문자를 보냅니다.", "경찰서 담당자가 신청 내용을 확인하고 동행 가능 여부를 안내합니다.", "배정이 확정되면 안내받은 장소에서 자율방범대원과 동행합니다."], // 이용방법 4개 설명
+    footerNotice: "Copyright by. 전남경찰청 영암경찰서 범죄예방대응과",
+  };
+
+
+  const I18N = {
+    "ko":{"siteTitle":"우리동네 안심귀가 동행 웹앱","siteDesc":"우리동네 안심귀가 동행 서비스. QR로 접속해 안내를 확인하고 문자로 신청하세요.","ogDesc":"자율방범대와 함께하는 안심귀가 동행 신청 서비스","brandHome":"우리동네 안심귀가 동행","subOrg":"신청 서비스","langLabel":"언어 선택","navOpen":"전체 메뉴 열기","navClose":"전체 메뉴 닫기","navTitle":"전체 메뉴","close":"닫기","navShare":"공유하기","navFaq":"자주 묻는 질문","navContact":"담당자","navCreator":"만든이","navBack":"← 메뉴로 돌아가기","mapOuter":"동행 서비스 지도","mapAlt":"출발지와 만남 장소지도","stepLabel":"단계","footerOrg":"에서 안내하는 안심귀가 동행 서비스입니다. 운영 시간·지역은 신청 안내를 확인해 주세요.","footerPrivacy":"신청 정보는 이 웹페이지에 저장되지 않습니다.","footerEmergency":"긴급한 위험이 있다면","footerCall":"112에 전화","footerEnd":"하세요.","bottomAria":"하단 빠른 메뉴","apply":"신청하기","modalTitle":"신청 전 확인해 주세요","modalDesc":"희망 일시와 만남 장소를 입력하면 담당자에게 보내는 문자 신청서가 작성됩니다.","modalGuide":"안심귀가 서비스 안내","area":"운영 지역","hours":"운영 시간","unspecified":"담당자 안내 확인","modalFollow":"신청 뒤 담당자가 확인 후 연락드립니다.","check1":"운영 지역·시간을 확인했습니다.","check2":"신청만으로 동행이 확정되지 않으며, 긴급상황은 112로 신고해야 함을 확인했습니다.","go":"문자 열기 →","formMissing":"운영 담당자의 문자 수신번호가 설정되지 않았습니다.","modalPrivacy":"입력 내용은 이 웹페이지에 저장되지 않습니다. 문자 앱에서 내용을 확인한 뒤 직접 전송하세요.","faqQ":["신청하면 바로 대원이 오나요?","언제, 어디서 이용할 수 있나요?","개인정보는 누구에게 전달되나요?","취소하거나 변경하려면?","차량을 이용하여 동행하나요?"],"faqA":["아닙니다. 신청 내용을 경찰서 담당자가 확인하고 동행 가능 여부를 별도로 안내합니다.","운영 지역·요일·시간은 담당 기관의 안내에 따라 달라집니다. 신청 화면의 안내를 확인하세요.","이 웹페이지는 신청 정보를 저장하거나 서버로 보내지 않습니다. 문자에서 전송하면 지정된 경찰서 담당자에게 전달됩니다. 자율방범대에는 동행에 필요한 최소한의 정보만 전달됩니다.","담당 경찰에게 연락하여 신청 변경·취소 의사를 알려 주세요. 이 웹페이지는 신청 현황을 직접 조회하지 않습니다.","아니요. 이 동행 서비스는 해당지역 자율방범대원과 도보로 동행합니다."],"contactDefault":"전남경찰청 영암경찰서 범죄예방대응과 범죄예방계 CPO","contactReason":"안심귀가 신청·변경·취소 문의","contactMissing":"061-470-0327","creatorLabel":"제작·운영: ","creatorMissing":"김은아(with.김진영)","creatorDesc":"자율방범대와 시민을 연결하는 귀가동행 신청 페이지입니다.","shareText":"우리동네 안심귀가 동행 안내","toastShareOffline":"공유 링크는 웹에 게시한 뒤 사용할 수 있습니다.","toastCopied":"페이지 주소를 복사했습니다.","toastCopyManual":"브라우저 주소창에서 주소를 복사해 주세요.","brandShort":"우리동네 안심귀가 동행","contact":"문의하기","modalKicker":"문자 신청","notice":"문자 앱이 자동으로 열리지 않거나 본문이 표시되지 않으면 신청 내용을 복사해 붙여넣으세요.","smsTitle":"안심귀가 동행 신청","smsName":"이름 또는 별칭 (선택)","smsDate":"희망 날짜","smsTime":"희망 시간","smsMeeting":"만남 장소","smsDestination":"귀가 지역 (선택)","smsPhone":"회신 연락처 (선택)","smsNotes":"기타 요청 (선택)","smsNamePh":"이름 또는 별칭","smsMeetingPh":"예: ○○건물 옆","smsDestinationPh":"정확한 집 주소 대신 동·권역만 입력","smsPhonePh":"예: 010-1234-5678","smsNotesPh":"필요한 내용만 작성","smsPreview":"작성된 문자 내용","smsCopy":"문자 내용 복사","smsCopied":"문자 내용을 복사했습니다.","smsMissingFields":"필수 항목을 모두 입력해 주세요.","smsMissingNumber":"운영자가 SMS 수신번호를 등록해야 합니다.","smsOpen":"문자 앱에서 보내기 버튼을 눌러야 접수됩니다.","slidePlaceholder":"이미지 주소를 설정하면 사진이 표시됩니다.","slidePrev":"이전 그림","slideNext":"다음 그림","privacyConsent":"[필수] 안심귀가 동행 신청을 위한 개인정보 수집·이용 및 문자 전송에 동의합니다.","privacyDetails":"수집·이용 목적: 신청 확인, 연락 및 동행 조정 / 항목: 신청서에 입력한 이름·연락처·일시·장소 등 / 문자 수신자: 지정된 경찰서 담당자 / 웹페이지에는 입력 내용이 저장되지 않습니다.","logoAlt":"경찰서 로고","slideshowAria":"안심귀가 그림 슬라이드","slideAlt1":"안심귀가 안내 그림 하나","slideAlt2":"안심귀가 안내 그림 둘"},
+    "en":{"siteTitle":"Safe Walk Home | Citizen Service","siteDesc":"Safe Walk Home service in your community. Scan the QR code to read the guidance and apply by text message.","ogDesc":"Apply for a volunteer-assisted walk home safely.","brand":"Safe Walk Home","brandHome":"Safe Walk Home homepage","sub":"Application Service","subOrg":"Citizen Application Service","langLabel":"Select language","navOpen":"Open menu","navClose":"Close menu","navTitle":"Menu","close":"Close","navShare":"Share","navFaq":"Frequently Asked Questions","navContact":"Contact","navCreator":"Created by","navBack":"← Back to menu","hero1":"Walking home alone?","hero2":"We can walk with you.","lead":"If you are concerned about walking home late, you can request an escort from local community patrol volunteers. Review the application steps and apply easily by text message.","trust1":"No app installation needed","trust2":"Application details sent by SMS","mapOuter":"Illustrative flat map showing the escort process","evening":"GOOD EVENING","phoneHeadline":"A safe walk home today, too","mapAlt":"Illustration connecting a starting point and meeting point; not a real location map","start":"Destination","meeting":"Meeting point","phoneGuide":"Safe Walk Home Escort Guide","phoneTitle":"Walk home together, with peace of mind","phoneDesc":"After you apply, a coordinator will contact you to confirm whether an escort is available.","tinySteps":["Apply","Review & contact","Escort"],"sectionKicker":"HOW IT WORKS","sectionTitle":"How to use the service","sectionDesc":"Scan the QR code and follow these steps to apply.","stepLabel":"STEP","stepsTitle":["Scan the QR code","Apply by SMS","Coordinator review","Walk home together"],"stepsDesc":["Scan the QR code on the promotional material to open the application page.","Enter your preferred time and designated meeting place, then send a text message.","A police coordinator will review your application and let you know whether an escort is available.","Once the escort is confirmed, meet a community patrol volunteer at the location provided."],"footerDefault":"Copyright by. Jeonnam Provincial Police Agency, Yeongam Police Station, Crime Prevention Response Division","footerOrg":" provides this Safe Walk Home service. Please check the application notice for service hours and coverage.","footerPrivacy":"Application details are not stored on this page.","footerEmergency":"If you are in immediate danger,","footerCall":"call 112","footerEnd":".","bottomAria":"Quick actions","apply":"Apply","modalTitle":"Before you apply","modalDesc":"Enter your preferred date, time and meeting point to prepare a text message for the coordinator.","modalGuide":"Service information","area":"Service area","hours":"Operating hours","unspecified":"Check with the operator","modalFollow":"A coordinator will review your request and contact you.","check1":"I have checked the service area and hours.","check2":"I understand that applying does not confirm an escort and that emergencies must be reported to 112.","go":"Open Messages →","formMissing":"The SMS recipient number has not been configured.","modalPrivacy":"This page does not store the information you type. Review and send the message in your messaging app.","faqQ":["Will a volunteer arrive immediately after I apply?","When and where can I use the service?","Who receives my personal information?","How can I change or cancel my application?","Does this service provide transportation by car?"],"faqA":["No. The police coordinator reviews your application and separately confirms whether an escort is available.","The service area, days, and hours depend on the responsible organization. Please check the application guidance.","This website does not store application details or send them to a server. Once you send the SMS, the information is delivered to the designated police coordinator. Only the minimum information necessary for the escort is passed to community patrol volunteers.","Contact the responsible police officer to change or cancel your application. This website cannot check the status of your application.","No. This service provides an on-foot escort by local community patrol volunteers."],"contactDefault":"CPO, Crime Prevention Unit, Crime Prevention Response Division, Yeongam Police Station, Jeonnam Provincial Police Agency","contactReason":"Questions about applications, changes or cancellations","contactMissing":"061-470-0327","creatorLabel":"Created and operated by: ","creatorMissing":"Kim Eun-a (with Kim Jin-yeong)","creatorDesc":"An information page linking residents with community safety volunteers for escorted walks home.","shareText":"Safe Walk Home information","toastShareOffline":"Share this page after it has been published online.","toastCopied":"Page link copied.","toastCopyManual":"Please copy the address from your browser's address bar.","brandShort":"Safe Walk Home","appPill":"SAFE WALK","contact":"Call us","modalKicker":"TEXT APPLICATION","notice":"If Messages does not open or the message body is missing, copy the prepared text and paste it manually.","smsTitle":"Safe walk home request","smsName":"Name or nickname (optional)","smsDate":"Preferred date","smsTime":"Preferred time","smsMeeting":"Meeting point","smsDestination":"Destination area (optional)","smsPhone":"Callback number (optional)","smsNotes":"Additional requests (optional)","smsNamePh":"Name or nickname","smsMeetingPh":"e.g., beside the ○○ building","smsDestinationPh":"Enter only the neighborhood or area, not your full home address","smsPhonePh":"e.g., 010-1234-5678","smsNotesPh":"Only essential details","smsPreview":"Prepared message","smsCopy":"Copy message","smsCopied":"Message copied.","smsMissingFields":"Complete the required fields.","smsMissingNumber":"The operator must set an SMS recipient number.","smsOpen":"Press Send in your messaging app to submit.","slidePlaceholder":"Add the image URLs to display the photos.","slidePrev":"Previous image","slideNext":"Next image","privacyConsent":"[Required] I consent to the collection and use of my personal information and its transmission by text message to apply for the Safe Walk Home escort service.","privacyDetails":"Purpose: application review, contact, and escort coordination / Information: name, contact number, date, time, location, etc. entered on the form / SMS recipient: designated police coordinator / This website does not store the entered information.","logoAlt":"Police station logo","slideshowAria":"Safe Walk Home illustration slideshow","slideAlt1":"Safe Walk Home illustration 1","slideAlt2":"Safe Walk Home illustration 2"},
+    "zh":{"siteTitle":"安心回家陪同服务｜市民网页","siteDesc":"本社区安心回家陪同服务。扫描二维码查看申请说明，并通过短信提交申请。","ogDesc":"社区巡防志愿者陪同市民安全回家。","brand":"安​心​回​家​陪​同​服​务","brandHome":"安心回家陪同服务首页","sub":"申请服务","subOrg":"市民申请服务","langLabel":"选择语言","navOpen":"打开菜单","navClose":"关闭菜单","navTitle":"菜单","close":"关闭","navShare":"分享","navFaq":"常见问题","navContact":"负责人","navCreator":"制作单位","navBack":"← 返回菜单","hero1":"独​自​走​在​回​家​的​路​上？","hero2":"可​以​陪​您​同​行。","lead":"如​果​您​担​心​夜​间​回​家​的​路​途，可​以​申​请​由​当​地​自​律​巡​防​队​志​愿​者​步​行​陪​同。查​看​申​请​流​程​后，即​可​通​过​短​信​便​捷​申​请。","trust1":"无需安装应用","trust2":"申请信息通过短信发送","mapOuter":"展示陪同服务流程的平面示意地图","evening":"晚上好","phoneHeadline":"今​天​也​请​平​安​回​家","mapAlt":"连接起点和会合地点的示意图，并非真实位置地图","start":"目的地","meeting":"会合地点","phoneGuide":"安​心​回​家​陪​同​指​南","phoneTitle":"有​人​同​行，回​家​更​安​心","phoneDesc":"提​交​申​请​后，工​作​人​员​将​确​认​是​否​能​够​安​排​陪​同，并​与​您​联​系。","tinySteps":["申请","确认及联系","陪同"],"sectionKicker":"使用流程","sectionTitle":"如​何​使​用","sectionDesc":"扫​描​二​维​码​进​入​网​页，按​照​以​下​步​骤​申​请。","stepLabel":"步骤","stepsTitle":["扫​描​二​维​码","短​信​申​请","工​作​人​员​确​认","陪​同​回​家"],"stepsDesc":["扫​描​宣​传​材​料​上​的​二​维​码，进​入​申​请​网​页。","填​写​希​望​的​时​间​和​指​定​的​会​合​地​点，并​发​送​短​信​申​请。","警​察​负​责​人​审​核​申​请，并​告​知​能​否​安​排​陪​同。","安​排​确​认​后，在​通​知​的​地​点​与​自​律​巡​防​队​志​愿​者​会​合，步​行​回​家。"],"footerDefault":"Copyright by. 全​罗​南​道​警​察​厅​灵​岩​警​察​署​犯​罪​预​防​应​对​科","footerOrg":"提供安心回家陪同服务。服务时间和区域请以申请说明为准。","footerPrivacy":"本​页​面​不​保​存​申​请​信​息。","footerEmergency":"如遇紧急危险，请","footerCall":"拨打112","footerEnd":"。","bottomAria":"底部快捷操作","apply":"立即申请","modalTitle":"申请前请先确认","modalDesc":"填​写​日​期、时​间​及​会​合​地​点，生​成​发​送​给​负​责​人​的​短​信。","modalGuide":"服务说明","area":"服务区域","hours":"服务时间","unspecified":"请查看运营单位公告","modalFollow":"提​交​后，负​责​人​会​审​核​并​与​您​联​系。","check1":"我已确认服务区域及时间。","check2":"我明白提交申请不代表陪同已确定，紧急情况应拨打112报警。","go":"打开短信应用 →","formMissing":"尚未设置接收申请短信的号码。","modalPrivacy":"本​页​面​不​保​存​输​入​信​息。请​在​短​信​应​用​中​确​认​内​容​并​自​行​发​送。","faqQ":["提交申请后，巡防队员会立即到达吗？","什么时候、在哪里可以使用这项服务？","我的个人信息会提供给谁？","如何修改或取消申请？","这项服务提供车辆接送吗？"],"faqA":["不会。警察负责人会审核申请，并另行通知是否能够安排陪同。","服务区域、日期和时间可能因负责机构而异，请查看申请页面的说明。","本网页不会保存申请信息或将其发送至服务器。您自行发送短信后，信息才会送达指定的警察负责人。只向自律巡防队员提供陪同所需的最少信息。","如需修改或取消申请，请联系负责的警务人员。本网页不能直接查询申请状态。","不提供。本服务由当地自律巡防队志愿者步行陪同回家。"],"contactDefault":"全​罗​南​道​警​察​厅​灵​岩​警​察​署​犯​罪​预​防​应​对​科​犯​罪​预​防​组（CPO）","contactReason":"关于申请、修改及取消的咨询","contactMissing":"061-470-0327","creatorLabel":"制作及运营：","creatorMissing":"Kim Eun-a（与 Kim Jin-yeong）","creatorDesc":"为​市​民​介​绍​社​区​巡​防​志​愿​者​陪​同​回​家​服​务​的​网​页。","shareText":"安心回家陪同服务介绍","toastShareOffline":"请先将网页发布到互联网，再分享链接。","toastCopied":"网页地址已复制。","toastCopyManual":"请从浏览器地址栏复制网址。","brandShort":"安​心​回​家​陪​同","appPill":"安心同行","contact":"电话咨询","modalKicker":"短信申请","notice":"若短信应用未打开或正文未显示，请先复制短信内容，再手动粘贴。","smsTitle":"安心回家陪同申请","smsName":"姓名或昵称（选填）","smsDate":"希望日期","smsTime":"希望时间","smsMeeting":"会合地点","smsDestination":"回家区域（选填）","smsPhone":"联系电话（选填）","smsNotes":"其他要求（选填）","smsNamePh":"姓名或昵称","smsMeetingPh":"例如：○○建筑物旁","smsDestinationPh":"只填写所在街区或区域，不必提供完整家庭住址","smsPhonePh":"例如：010-1234-5678","smsNotesPh":"仅填写必要信息","smsPreview":"短信预览","smsCopy":"复制短信内容","smsCopied":"短信内容已复制。","smsMissingFields":"请填写所有必填项。","smsMissingNumber":"需先设置短信接收号码。","smsOpen":"请在短信应用中点击发送，申请才会提交。","slidePlaceholder":"设​置​图​片​地​址​后​将​显​示​照​片。","slidePrev":"上一张","slideNext":"下一张","privacyConsent":"【必​选】我​同​意​为​申​请​安​心​回​家​陪​同​服​务​而​收​集、使​用​我​的​个​人​信​息，并​通​过​短​信​发​送​申​请​信​息。","privacyDetails":"收​集​及​使​用​目​的：确​认​申​请、联​系​申​请​人​及​协​调​陪​同 / 信​息​项​目：申​请​表​中​填​写​的​姓​名、联​系​方​式、日​期、时​间​及​地​点​等 / 短​信​接​收​方：指​定​的​警​察​负​责​人 / 本​网​页​不​会​保​存​输​入​的​信​息。","logoAlt":"警察署标志","slideshowAria":"安心回家陪同服务图片轮播","slideAlt1":"安心回家陪同说明图一","slideAlt2":"安心回家陪同说明图二"},
+    "vi":{"siteTitle":"Dịch vụ đồng hành về nhà an toàn | Trang dành cho người dân","siteDesc":"Dịch vụ đồng hành về nhà an toàn trong khu vực. Quét mã QR để xem hướng dẫn và gửi yêu cầu bằng SMS.","ogDesc":"Dịch vụ tình nguyện viên hỗ trợ người dân về nhà an toàn.","brand":"Đồng hành về nhà an toàn","brandHome":"Trang chủ dịch vụ đồng hành về nhà an toàn","sub":"Dịch vụ đăng ký","subOrg":"Dịch vụ đăng ký dành cho người dân","langLabel":"Chọn ngôn ngữ","navOpen":"Mở menu","navClose":"Đóng menu","navTitle":"Menu","close":"Đóng","navShare":"Chia sẻ","navFaq":"Câu hỏi thường gặp","navContact":"Liên hệ","navCreator":"Đơn vị thực hiện","navBack":"← Quay lại menu","hero1":"Bạn phải về nhà một mình?","hero2":"Chúng tôi có thể đi cùng bạn.","lead":"Nếu lo lắng khi về nhà muộn, bạn có thể đăng ký dịch vụ đi bộ đồng hành cùng tình nguyện viên đội tuần tra tự quản. Xem các bước và gửi yêu cầu thuận tiện qua tin nhắn SMS.","trust1":"Không cần cài ứng dụng","trust2":"Thông tin đăng ký được gửi qua SMS","mapOuter":"Bản đồ minh họa quy trình đồng hành","evening":"CHÀO BUỔI TỐI","phoneHeadline":"Hôm nay cũng về nhà an toàn","mapAlt":"Sơ đồ minh họa điểm xuất phát và điểm hẹn; không phải bản đồ vị trí thực tế","start":"Điểm đến","meeting":"Điểm hẹn","phoneGuide":"Hướng dẫn dịch vụ đồng hành","phoneTitle":"An tâm hơn khi có người đồng hành","phoneDesc":"Sau khi đăng ký, người phụ trách sẽ liên hệ để xác nhận có thể bố trí người đi cùng hay không.","tinySteps":["Đăng ký","Xác nhận, liên hệ","Đồng hành"],"sectionKicker":"CÁCH SỬ DỤNG","sectionTitle":"Các bước thực hiện","sectionDesc":"Quét mã QR và làm theo các bước dưới đây để đăng ký.","stepLabel":"BƯỚC","stepsTitle":["Quét mã QR","Đăng ký qua SMS","Người phụ trách xem xét","Cùng đi về nhà"],"stepsDesc":["Quét mã QR trên tài liệu tuyên truyền để truy cập trang đăng ký.","Điền giờ mong muốn và địa điểm hẹn được chỉ định, sau đó gửi SMS.","Cán bộ cảnh sát phụ trách kiểm tra yêu cầu và thông báo liệu có thể bố trí người đi cùng hay không.","Khi được xác nhận, hãy gặp tình nguyện viên đội tuần tra tại địa điểm được thông báo để cùng đi bộ về nhà."],"footerDefault":"Bản quyền: Phòng Ứng phó và phòng ngừa tội phạm, Đồn Cảnh sát Yeongam, Cảnh sát tỉnh Jeonnam","footerOrg":" cung cấp dịch vụ đồng hành về nhà an toàn. Vui lòng xem thông báo đăng ký để biết thời gian và khu vực phục vụ.","footerPrivacy":"Trang này không lưu thông tin đăng ký.","footerEmergency":"Nếu đang gặp nguy hiểm khẩn cấp, hãy","footerCall":"gọi 112","footerEnd":".","bottomAria":"Thao tác nhanh","apply":"Đăng ký","modalTitle":"Vui lòng kiểm tra trước khi đăng ký","modalDesc":"Nhập ngày, giờ và nơi gặp để soạn tin nhắn gửi người phụ trách.","modalGuide":"Thông tin dịch vụ","area":"Khu vực phục vụ","hours":"Giờ hoạt động","unspecified":"Xem thông báo của đơn vị vận hành","modalFollow":"Người phụ trách sẽ xem xét yêu cầu và liên hệ với bạn.","check1":"Tôi đã kiểm tra khu vực và thời gian hoạt động.","check2":"Tôi hiểu rằng việc gửi yêu cầu không đồng nghĩa với việc đã được xác nhận hỗ trợ và phải gọi 112 khi khẩn cấp.","go":"Mở ứng dụng SMS →","formMissing":"Chưa cài đặt số điện thoại nhận SMS.","modalPrivacy":"Trang này không lưu thông tin bạn nhập. Hãy kiểm tra và tự gửi trong ứng dụng SMS.","faqQ":["Tình nguyện viên có đến ngay sau khi tôi đăng ký không?","Dịch vụ hoạt động khi nào và ở đâu?","Ai sẽ nhận được thông tin cá nhân của tôi?","Tôi có thể thay đổi hoặc hủy yêu cầu bằng cách nào?","Dịch vụ này có đưa đón bằng ô tô không?"],"faqA":["Không. Cán bộ cảnh sát phụ trách sẽ xem xét yêu cầu và thông báo riêng về khả năng bố trí người đồng hành.","Khu vực, ngày và giờ hoạt động tùy theo đơn vị phụ trách. Vui lòng xem hướng dẫn trên màn hình đăng ký.","Trang web này không lưu thông tin đăng ký hoặc gửi dữ liệu lên máy chủ. Chỉ sau khi bạn tự gửi SMS, thông tin mới được chuyển đến cán bộ cảnh sát phụ trách được chỉ định. Tình nguyện viên đội tuần tra chỉ nhận thông tin tối thiểu cần thiết cho việc đồng hành.","Hãy liên hệ cán bộ cảnh sát phụ trách để thay đổi hoặc hủy yêu cầu. Không thể kiểm tra tình trạng đăng ký trực tiếp trên trang web này.","Không. Dịch vụ này là hình thức đi bộ cùng tình nguyện viên đội tuần tra tự quản tại địa phương."],"contactDefault":"Cán bộ CPO, Đội Phòng ngừa tội phạm, Phòng Ứng phó và phòng ngừa tội phạm, Đồn Cảnh sát Yeongam, Cảnh sát tỉnh Jeonnam","contactReason":"Hỏi về đăng ký, thay đổi hoặc hủy yêu cầu","contactMissing":"061-470-0327","creatorLabel":"Đơn vị xây dựng và vận hành: ","creatorMissing":"Kim Eun-a (cùng Kim Jin-yeong)","creatorDesc":"Trang hướng dẫn kết nối người dân với tình nguyện viên an ninh cộng đồng để đồng hành về nhà an toàn.","shareText":"Thông tin dịch vụ đồng hành về nhà an toàn","toastShareOffline":"Hãy đăng trang web lên mạng trước khi chia sẻ liên kết.","toastCopied":"Đã sao chép liên kết trang.","toastCopyManual":"Vui lòng sao chép địa chỉ từ thanh địa chỉ trình duyệt.","brandShort":"Về nhà an toàn","appPill":"ĐỒNG HÀNH AN TOÀN","contact":"Gọi tư vấn","modalKicker":"ĐĂNG KÝ QUA SMS","notice":"Nếu ứng dụng SMS không mở hoặc thiếu nội dung, hãy sao chép rồi dán tin nhắn.","smsTitle":"Yêu cầu đồng hành về nhà","smsName":"Tên hoặc biệt danh (không bắt buộc)","smsDate":"Ngày mong muốn","smsTime":"Giờ mong muốn","smsMeeting":"Điểm gặp","smsDestination":"Khu vực về nhà (không bắt buộc)","smsPhone":"Số liên hệ (không bắt buộc)","smsNotes":"Yêu cầu khác (không bắt buộc)","smsNamePh":"Tên hoặc biệt danh","smsMeetingPh":"Ví dụ: bên cạnh tòa nhà ○○","smsDestinationPh":"Chỉ nhập phường hoặc khu vực, không cần địa chỉ nhà cụ thể","smsPhonePh":"VD: 010-1234-5678","smsNotesPh":"Chỉ ghi điều cần thiết","smsPreview":"Nội dung tin nhắn","smsCopy":"Sao chép tin nhắn","smsCopied":"Đã sao chép tin nhắn.","smsMissingFields":"Vui lòng điền đủ mục bắt buộc.","smsMissingNumber":"Cần cài số điện thoại nhận SMS.","smsOpen":"Nhấn Gửi trong ứng dụng SMS để hoàn tất.","slidePlaceholder":"Thêm đường dẫn ảnh để hiển thị.","slidePrev":"Ảnh trước","slideNext":"Ảnh tiếp","privacyConsent":"[Bắt buộc] Tôi đồng ý cho thu thập, sử dụng thông tin cá nhân và gửi thông tin qua SMS để đăng ký dịch vụ đồng hành về nhà an toàn.","privacyDetails":"Mục đích thu thập, sử dụng: xác nhận đăng ký, liên hệ và điều phối người đồng hành / Thông tin: họ tên, số liên hệ, ngày giờ, địa điểm và các nội dung nhập trong đơn / Người nhận SMS: cán bộ cảnh sát được chỉ định / Trang web không lưu nội dung đã nhập.","logoAlt":"Biểu trưng đồn cảnh sát","slideshowAria":"Trình chiếu hình minh họa dịch vụ đồng hành về nhà an toàn","slideAlt1":"Hình hướng dẫn đồng hành về nhà an toàn số 1","slideAlt2":"Hình hướng dẫn đồng hành về nhà an toàn số 2"},
+    "th":{"siteTitle":"บริการเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย | สำหรับประชาชน","siteDesc":"บริการอาสาสมัครเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัยในชุมชน สแกนคิวอาร์โค้ดเพื่ออ่านคำแนะนำและยื่นคำขอทาง SMS","ogDesc":"บริการอาสาสมัครดูแลความปลอดภัยร่วมเดินทางกลับบ้าน","brand":"เดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย","brandHome":"หน้าแรกบริการเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย","sub":"บริการยื่นคำขอ","subOrg":"บริการสมัครสำหรับประชาชน","langLabel":"เลือกภาษา","navOpen":"เปิดเมนู","navClose":"ปิดเมนู","navTitle":"เมนู","close":"ปิด","navShare":"แชร์","navFaq":"คำถามที่พบบ่อย","navContact":"ผู้ประสานงาน","navCreator":"ผู้จัดทำ","navBack":"← กลับไปที่เมนู","hero1":"ต้องเดินกลับบ้านคนเดียวหรือไม่?","hero2":"เราสามารถเดินเป็นเพื่อนคุณได้","lead":"หากกังวลเรื่องการเดินกลับบ้านในช่วงดึก สามารถขอให้สมาชิกอาสาสมัครสายตรวจชุมชนเดินเป็นเพื่อนได้ โปรดดูขั้นตอนและส่งคำขอผ่าน SMS ได้อย่างสะดวก","trust1":"ไม่ต้องติดตั้งแอป","trust2":"ส่งข้อมูลคำขอผ่าน SMS","mapOuter":"แผนที่ตัวอย่างแสดงขั้นตอนบริการ","evening":"สวัสดีตอนเย็น","phoneHeadline":"วันนี้ก็เดินกลับบ้านอย่างปลอดภัย","mapAlt":"แผนที่ภาพประกอบเชื่อมจุดเริ่มต้นกับจุดนัดพบ ไม่ใช่แผนที่ตำแหน่งจริง","start":"จุดหมายปลายทาง","meeting":"จุดนัดพบ","phoneGuide":"คำแนะนำบริการเดินเป็นเพื่อน","phoneTitle":"กลับบ้านอย่างอุ่นใจเมื่อมีเพื่อนร่วมทาง","phoneDesc":"หลังส่งคำขอ ผู้ประสานงานจะตรวจสอบว่าสามารถจัดอาสาสมัครได้หรือไม่และติดต่อกลับ","tinySteps":["ยื่นคำขอ","ตรวจสอบและติดต่อ","เดินเป็นเพื่อน"],"sectionKicker":"ขั้นตอนการใช้บริการ","sectionTitle":"วิธีใช้บริการ","sectionDesc":"สแกนคิวอาร์โค้ดแล้วทำตามขั้นตอนต่อไปนี้เพื่อยื่นคำขอ","stepLabel":"ขั้นตอนที่","stepsTitle":["สแกนคิวอาร์โค้ด","สมัครทาง SMS","เจ้าหน้าที่ตรวจสอบ","เดินกลับบ้านด้วยกัน"],"stepsDesc":["สแกนคิวอาร์โค้ดบนสื่อประชาสัมพันธ์เพื่อเข้าสู่หน้าสมัคร","ระบุเวลาที่ต้องการและจุดนัดพบที่กำหนด แล้วส่งคำขอทาง SMS","เจ้าหน้าที่ตำรวจผู้รับผิดชอบตรวจสอบคำขอและแจ้งว่าสามารถจัดผู้ร่วมเดินได้หรือไม่","เมื่อยืนยันการให้บริการแล้ว ให้พบอาสาสมัครสายตรวจชุมชน ณ จุดที่ได้รับแจ้งและเดินกลับบ้านด้วยกัน"],"footerDefault":"ลิขสิทธิ์: ฝ่ายรับมือและป้องกันอาชญากรรม สถานีตำรวจยองอัม สำนักงานตำรวจจังหวัดช็อลลานัมโด","footerOrg":" ให้บริการเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย โปรดตรวจสอบเวลาและพื้นที่ให้บริการในประกาศรับสมัคร","footerPrivacy":"หน้านี้ไม่เก็บข้อมูลคำขอ","footerEmergency":"หากตกอยู่ในอันตรายฉุกเฉิน ให้","footerCall":"โทร 112","footerEnd":"","bottomAria":"เมนูลัดด้านล่าง","apply":"สมัคร","modalTitle":"โปรดตรวจสอบก่อนสมัคร","modalDesc":"กรอกวัน เวลา และจุดนัดพบเพื่อสร้างข้อความถึงผู้ประสานงาน","modalGuide":"ข้อมูลการให้บริการ","area":"พื้นที่ให้บริการ","hours":"เวลาให้บริการ","unspecified":"ตรวจสอบประกาศของหน่วยงาน","modalFollow":"เจ้าหน้าที่จะตรวจสอบคำขอและติดต่อกลับ","check1":"ฉันตรวจสอบพื้นที่และเวลาให้บริการแล้ว","check2":"ฉันเข้าใจว่าการส่งคำขอยังไม่ใช่การยืนยันการเดินเป็นเพื่อน และเหตุฉุกเฉินต้องโทร 112","go":"เปิดแอปข้อความ →","formMissing":"ยังไม่ได้ตั้งค่าหมายเลขรับ SMS","modalPrivacy":"หน้านี้ไม่เก็บข้อมูลที่กรอก กรุณาตรวจสอบและกดส่งในแอปข้อความด้วยตนเอง","faqQ":["เมื่อยื่นคำขอแล้ว อาสาสมัครจะมาทันทีหรือไม่?","สามารถใช้บริการได้เมื่อใดและที่ไหน?","ใครจะได้รับข้อมูลส่วนบุคคลของฉัน?","จะเปลี่ยนแปลงหรือยกเลิกคำขอได้อย่างไร?","บริการนี้มีรถรับส่งหรือไม่?"],"faqA":["ไม่ใช่ เจ้าหน้าที่ตำรวจผู้รับผิดชอบจะตรวจสอบคำขอและแจ้งแยกต่างหากว่าสามารถจัดผู้ร่วมเดินได้หรือไม่","พื้นที่ วัน และเวลาให้บริการอาจแตกต่างกันตามหน่วยงานผู้รับผิดชอบ โปรดตรวจสอบคำแนะนำในหน้าสมัคร","เว็บไซต์นี้ไม่เก็บข้อมูลคำขอหรือส่งข้อมูลไปยังเซิร์ฟเวอร์ เมื่อคุณกดส่ง SMS ด้วยตนเอง ข้อมูลจึงจะส่งถึงเจ้าหน้าที่ตำรวจที่กำหนด และจะส่งต่อให้อาสาสมัครสายตรวจชุมชนเฉพาะข้อมูลขั้นต่ำที่จำเป็นต่อการเดินเป็นเพื่อน","โปรดติดต่อเจ้าหน้าที่ตำรวจผู้รับผิดชอบเพื่อเปลี่ยนแปลงหรือยกเลิกคำขอ เว็บไซต์นี้ไม่สามารถตรวจสอบสถานะคำขอได้โดยตรง","ไม่มี บริการนี้ให้สมาชิกอาสาสมัครสายตรวจชุมชนในพื้นที่เดินเป็นเพื่อนคุณกลับบ้าน"],"contactDefault":"เจ้าหน้าที่ CPO หน่วยป้องกันอาชญากรรม ฝ่ายรับมือและป้องกันอาชญากรรม สถานีตำรวจยองอัม สำนักงานตำรวจจังหวัดช็อลลานัมโด","contactReason":"สอบถามการสมัคร แก้ไข หรือยกเลิก","contactMissing":"061-470-0327","creatorLabel":"จัดทำและดำเนินการโดย: ","creatorMissing":"Kim Eun-a (ร่วมกับ Kim Jin-yeong)","creatorDesc":"เว็บไซต์แนะนำบริการอาสาสมัครร่วมเดินเป็นเพื่อนประชาชนกลับบ้านอย่างปลอดภัย","shareText":"ข้อมูลบริการเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย","toastShareOffline":"โปรดเผยแพร่เว็บไซต์ออนไลน์ก่อนแชร์ลิงก์","toastCopied":"คัดลอกลิงก์แล้ว","toastCopyManual":"โปรดคัดลอกที่อยู่จากแถบที่อยู่ของเบราว์เซอร์","brandShort":"กลับบ้านอย่างปลอดภัย","appPill":"เดินทางปลอดภัย","contact":"โทรสอบถาม","modalKicker":"สมัครผ่าน SMS","notice":"หากแอปข้อความไม่เปิดหรือไม่มีข้อความ โปรดคัดลอกแล้ววางด้วยตนเอง","smsTitle":"คำขอเดินเป็นเพื่อนกลับบ้าน","smsName":"ชื่อหรือชื่อเล่น (ไม่บังคับ)","smsDate":"วันที่ต้องการ","smsTime":"เวลาที่ต้องการ","smsMeeting":"จุดนัดพบ","smsDestination":"พื้นที่ปลายทาง (ไม่บังคับ)","smsPhone":"เบอร์ติดต่อกลับ (ไม่บังคับ)","smsNotes":"คำขอเพิ่มเติม (ไม่บังคับ)","smsNamePh":"ชื่อหรือชื่อเล่น","smsMeetingPh":"เช่น ข้างอาคาร ○○","smsDestinationPh":"ระบุเฉพาะย่านหรือพื้นที่ ไม่จำเป็นต้องระบุที่อยู่บ้านโดยละเอียด","smsPhonePh":"เช่น 010-1234-5678","smsNotesPh":"ระบุเฉพาะที่จำเป็น","smsPreview":"ตัวอย่างข้อความ","smsCopy":"คัดลอกข้อความ","smsCopied":"คัดลอกข้อความแล้ว","smsMissingFields":"กรุณากรอกข้อมูลที่จำเป็น","smsMissingNumber":"ผู้ดูแลต้องตั้งค่าหมายเลขรับ SMS","smsOpen":"ต้องกดส่งในแอปข้อความเพื่อยื่นคำขอ","slidePlaceholder":"ตั้งค่าลิงก์รูปภาพเพื่อแสดงรูป","slidePrev":"รูปก่อนหน้า","slideNext":"รูปถัดไป","privacyConsent":"[จำเป็น] ฉันยินยอมให้เก็บรวบรวม ใช้ และส่งข้อมูลส่วนบุคคลทาง SMS เพื่อยื่นคำขอใช้บริการเดินเป็นเพื่อนกลับบ้านอย่างปลอดภัย","privacyDetails":"วัตถุประสงค์: ตรวจสอบคำขอ ติดต่อผู้สมัคร และประสานงานการเดินเป็นเพื่อน / ข้อมูล: ชื่อ เบอร์ติดต่อ วัน เวลา สถานที่ และข้อมูลที่กรอกในแบบฟอร์ม / ผู้รับ SMS: เจ้าหน้าที่ตำรวจที่กำหนด / เว็บไซต์นี้ไม่จัดเก็บข้อมูลที่กรอก","logoAlt":"ตราสถานีตำรวจ","slideshowAria":"สไลด์ภาพแนะนำบริการเดินเป็นเพื่อนกลับบ้าน","slideAlt1":"ภาพแนะนำการเดินเป็นเพื่อนกลับบ้านภาพที่ 1","slideAlt2":"ภาพแนะนำการเดินเป็นเพื่อนกลับบ้านภาพที่ 2"},
+    "uz":{"siteTitle":"Uyga xavfsiz kuzatib qo‘yish | Fuqarolar uchun sahifa","siteDesc":"Mahallamizdagi uyga xavfsiz hamrohlik xizmati. QR-kod orqali ko‘rsatmalarni ko‘rib, SMS bilan ariza yuboring.","ogDesc":"Jamoat xavfsizligi ko‘ngillilari hamrohligida uyga qaytish xizmati.","brand":"Uyga xavfsiz kuzatib qo‘yish","brandHome":"Uyga xavfsiz kuzatib qo‘yish bosh sahifasi","sub":"Ariza berish xizmati","subOrg":"Fuqarolar uchun ariza xizmati","langLabel":"Tilni tanlang","navOpen":"Menyuni ochish","navClose":"Menyuni yopish","navTitle":"Menyu","close":"Yopish","navShare":"Ulashish","navFaq":"Ko‘p so‘raladigan savollar","navContact":"Mas’ul xodim","navCreator":"Tuzuvchilar","navBack":"← Menyuga qaytish","hero1":"Uyga yolg‘iz qaytyapsizmi?","hero2":"Sizga hamroh bo‘la olamiz.","lead":"Kechki payt uyga qaytishdan xavotirda bo‘lsangiz, mahalliy ko‘ngilli patrul a’zolaridan piyoda hamrohlik so‘rashingiz mumkin. Ariza berish tartibini ko‘rib, SMS orqali oson murojaat qiling.","trust1":"Ilova o‘rnatish shart emas","trust2":"Ariza ma’lumotlari SMS orqali yuboriladi","mapOuter":"Hamrohlik jarayonining sxematik xaritasi","evening":"XAYRLI KECH","phoneHeadline":"Bugun ham uyga xavfsiz qayting","mapAlt":"Boshlang‘ich nuqta va uchrashuv joyini ko‘rsatuvchi chizma; haqiqiy xarita emas","start":"Manzil","meeting":"Uchrashuv joyi","phoneGuide":"Xavfsiz hamrohlik haqida","phoneTitle":"Birgalikda yo‘l bosish — ko‘proq xotirjamlik","phoneDesc":"Arizadan so‘ng mas’ul xodim hamrohlik imkoniyatini tekshirib, siz bilan bog‘lanadi.","tinySteps":["Ariza","Tekshirish va aloqa","Hamrohlik"],"sectionKicker":"FOYDALANISH TARTIBI","sectionTitle":"Xizmatdan qanday foydalaniladi?","sectionDesc":"QR-kodni skanerlab, quyidagi bosqichlar orqali ariza yuboring.","stepLabel":"BOSQICH","stepsTitle":["QR-kodni skanerlang","SMS orqali ariza","Mas’ul xodim tekshiradi","Birga uyga qaytish"],"stepsDesc":["Targ‘ibot materialidagi QR-kodni skanerlab ariza sahifasiga kiring.","Istalgan vaqt va belgilangan uchrashuv joyini yozib, SMS orqali ariza yuboring.","Mas’ul politsiya xodimi arizani ko‘rib chiqadi va hamrohlik imkoniyati haqida xabar beradi.","Hamrohlik tasdiqlansa, ko‘rsatilgan joyda mahalliy ko‘ngilli patrul a’zosi bilan uchrashib, piyoda birga qayting."],"footerDefault":"Mualliflik huquqi: Jeonnam viloyati politsiya boshqarmasi, Yeongam politsiya bo‘limi, Jinoyatlarning oldini olish va chora ko‘rish bo‘limi","footerOrg":" uyga xavfsiz kuzatib qo‘yish xizmatini taqdim etadi. Vaqt va hududni ariza e’lonidan tekshiring.","footerPrivacy":"Ariza ma’lumotlari bu sahifada saqlanmaydi.","footerEmergency":"Zudlik bilan xavf tug‘ilsa,","footerCall":"112 raqamiga qo‘ng‘iroq qiling","footerEnd":".","bottomAria":"Tezkor tugmalar","apply":"Ariza berish","modalTitle":"Ariza berishdan oldin tekshiring","modalDesc":"Sana, vaqt va uchrashuv joyini kiriting; mas’ul xodimga SMS tayyorlanadi.","modalGuide":"Xizmat haqida","area":"Xizmat hududi","hours":"Ish vaqti","unspecified":"Tashkilot e’lonini tekshiring","modalFollow":"Mas’ul xodim arizani ko‘rib chiqib, siz bilan bog‘lanadi.","check1":"Xizmat hududi va vaqtini tekshirdim.","check2":"Ariza topshirish hamrohlik tasdiqlanganini anglatmasligini va favqulodda vaziyatda 112 ga murojaat qilish kerakligini tushundim.","go":"SMS ilovasini ochish →","formMissing":"SMS qabul qiluvchi raqam sozlanmagan.","modalPrivacy":"Bu sahifa kiritilgan ma’lumotlarni saqlamaydi. SMS ilovasida tekshirib, o‘zingiz yuboring.","faqQ":["Ariza yuborilgach, ko‘ngilli darhol keladimi?","Xizmatdan qachon va qayerda foydalanish mumkin?","Shaxsiy ma’lumotlarim kimga beriladi?","Arizani qanday o‘zgartirish yoki bekor qilish mumkin?","Ushbu xizmatda avtomobilda olib borishadimi?"],"faqA":["Yo‘q. Mas’ul politsiya xodimi arizani tekshiradi va hamrohlik mumkinligini alohida bildiradi.","Xizmat hududi, kunlari va soatlari mas’ul tashkilotga qarab farqlanadi. Ariza oynasidagi ma’lumotni tekshiring.","Bu veb-sahifa ariza ma’lumotlarini saqlamaydi yoki serverga yubormaydi. SMS xabarni o‘zingiz yuborganingizdan keyingina ma’lumot belgilangan politsiya xodimiga yetib boradi. Ko‘ngilli patrul a’zolariga hamrohlik uchun zarur bo‘lgan eng kam ma’lumotgina beriladi.","Arizani o‘zgartirish yoki bekor qilish uchun mas’ul politsiya xodimiga murojaat qiling. Bu veb-sahifada ariza holatini bevosita tekshirib bo‘lmaydi.","Yo‘q. Ushbu xizmatda mahalliy ko‘ngilli patrul a’zolari sizga piyoda hamrohlik qiladi."],"contactDefault":"CPO, Jinoyatlarning oldini olish guruhi, Jinoyatlarning oldini olish va chora ko‘rish bo‘limi, Yeongam politsiya bo‘limi, Jeonnam viloyati politsiya boshqarmasi","contactReason":"Ariza, o‘zgartirish va bekor qilish bo‘yicha savollar","contactMissing":"061-470-0327","creatorLabel":"Tayyorlagan va yurituvchi tashkilot: ","creatorMissing":"Kim Eun-a (Kim Jin-yeong bilan)","creatorDesc":"Fuqarolarni uyga xavfsiz kuzatib qo‘yuvchi mahalla ko‘ngillilari haqida ma’lumot sahifasi.","shareText":"Uyga xavfsiz kuzatib qo‘yish xizmati","toastShareOffline":"Havolani ulashish uchun avval sahifani internetga joylang.","toastCopied":"Sahifa havolasi nusxalandi.","toastCopyManual":"Manzilni brauzer satridan nusxalang.","brandShort":"Xavfsiz uyga qaytish","appPill":"XAVFSIZ YO‘L","contact":"Qo‘ng‘iroq","modalKicker":"SMS ORQALI ARIZA","notice":"SMS ilovasi ochilmasa yoki matn ko‘rinmasa, matnni nusxalab qo‘lda joylashtiring.","smsTitle":"Uyga xavfsiz kuzatish arizasi","smsName":"Ism yoki taxallus (ixtiyoriy)","smsDate":"Istalgan sana","smsTime":"Istalgan vaqt","smsMeeting":"Uchrashuv joyi","smsDestination":"Boriladigan hudud (ixtiyoriy)","smsPhone":"Aloqa raqami (ixtiyoriy)","smsNotes":"Qo‘shimcha so‘rov (ixtiyoriy)","smsNamePh":"Ism yoki taxallus","smsMeetingPh":"Masalan: ○○ binosi yonida","smsDestinationPh":"Uyning aniq manzilini emas, faqat mahalla yoki hududni kiriting","smsPhonePh":"Masalan: 010-1234-5678","smsNotesPh":"Faqat zarur ma’lumotlar","smsPreview":"SMS matni","smsCopy":"SMS matnini nusxalash","smsCopied":"SMS matni nusxalandi.","smsMissingFields":"Majburiy maydonlarni to‘ldiring.","smsMissingNumber":"SMS qabul qiluvchi raqamni kiriting.","smsOpen":"Ariza yuborilishi uchun SMS ilovasida Yuborish tugmasini bosing.","slidePlaceholder":"Rasm havolalarini kiritgach, rasmlar ko‘rinadi.","slidePrev":"Oldingi rasm","slideNext":"Keyingi rasm","privacyConsent":"[Majburiy] Uyga xavfsiz hamrohlik xizmatiga ariza berish uchun shaxsiy ma’lumotlarimni yig‘ish, ulardan foydalanish va SMS orqali yuborishga roziman.","privacyDetails":"Maqsad: arizani tekshirish, bog‘lanish va hamrohlikni muvofiqlashtirish / Ma’lumotlar: arizaga kiritilgan ism, telefon raqami, sana, vaqt, joy va boshqalar / SMS oluvchi: belgilangan politsiya xodimi / Bu veb-sahifa kiritilgan ma’lumotlarni saqlamaydi.","logoAlt":"Politsiya bo‘limi logotipi","slideshowAria":"Uyga xavfsiz hamrohlik bo‘yicha rasmlar slayd-shousi","slideAlt1":"Uyga xavfsiz hamrohlik bo‘yicha 1-rasm","slideAlt2":"Uyga xavfsiz hamrohlik bo‘yicha 2-rasm"},
+    "ru":{"siteTitle":"Безопасное сопровождение домой | Для жителей","siteDesc":"Служба безопасного сопровождения домой в нашем районе. Отсканируйте QR-код, ознакомьтесь с инструкцией и подайте заявку по SMS.","ogDesc":"Сопровождение жителей домой волонтёрами общественной безопасности.","brand":"Безопасное сопровождение домой","brandHome":"Главная: безопасное сопровождение домой","sub":"Подача заявки","subOrg":"Приём заявок от жителей","langLabel":"Выбрать язык","navOpen":"Открыть меню","navClose":"Закрыть меню","navTitle":"Меню","close":"Закрыть","navShare":"Поделиться","navFaq":"Частые вопросы","navContact":"Контакты","navCreator":"Авторы","navBack":"← Назад в меню","hero1":"Возвращаетесь домой в одиночестве?","hero2":"Мы можем пойти с вами.","lead":"Если вы беспокоитесь о возвращении домой поздно вечером, вы можете попросить добровольцев местного общественного патруля проводить вас пешком. Ознакомьтесь с порядком подачи заявки и отправьте SMS.","trust1":"Установка приложения не требуется","trust2":"Данные заявки передаются по SMS","mapOuter":"Схематичная плоская карта процесса сопровождения","evening":"ДОБРОГО ВЕЧЕРА","phoneHeadline":"И сегодня — безопасной дороги домой","mapAlt":"Схема начальной точки и места встречи; это не реальная карта","start":"Пункт назначения","meeting":"Место встречи","phoneGuide":"О службе сопровождения","phoneTitle":"Вместе идти спокойнее","phoneDesc":"После подачи заявки координатор проверит возможность сопровождения и свяжется с вами.","tinySteps":["Заявка","Проверка и связь","Сопровождение"],"sectionKicker":"ПОРЯДОК ОБРАЩЕНИЯ","sectionTitle":"Как воспользоваться услугой","sectionDesc":"Отсканируйте QR-код и выполните следующие шаги.","stepLabel":"ШАГ","stepsTitle":["Сканирование QR-кода","Заявка по SMS","Проверка координатором","Сопровождение домой"],"stepsDesc":["Отсканируйте QR-код на информационных материалах, чтобы открыть страницу подачи заявки.","Укажите желаемое время и назначенное место встречи, затем отправьте заявку по SMS.","Ответственный сотрудник полиции проверит заявку и сообщит, возможно ли сопровождение.","После подтверждения встретьтесь с добровольцем общественного патруля в указанном месте и вместе возвращайтесь пешком."],"footerDefault":"Авторские права: Отдел реагирования и профилактики преступлений полицейского участка Йонам, Полиция провинции Чолла-Намдо","footerOrg":" предоставляет услугу безопасного сопровождения. Уточняйте район и часы работы в объявлении к заявке.","footerPrivacy":"Заявка на этой странице не сохраняется.","footerEmergency":"Если вам угрожает непосредственная опасность,","footerCall":"позвоните по номеру 112","footerEnd":".","bottomAria":"Быстрые действия","apply":"Подать заявку","modalTitle":"Перед подачей заявки","modalDesc":"Введите дату, время и место встречи, чтобы подготовить SMS для координатора.","modalGuide":"Информация об услуге","area":"Район обслуживания","hours":"Часы работы","unspecified":"Уточните у организатора","modalFollow":"Координатор рассмотрит заявку и свяжется с вами.","check1":"Я проверил(а) район и часы работы.","check2":"Я понимаю, что подача заявки не означает подтверждения сопровождения, а в экстренной ситуации нужно звонить 112.","go":"Открыть сообщения →","formMissing":"Номер приёма SMS не настроен.","modalPrivacy":"Данные на этой странице не сохраняются. Проверьте текст и нажмите отправить в приложении SMS.","faqQ":["Волонтёр придёт сразу после подачи заявки?","Когда и где доступна услуга?","Кому передаются мои персональные данные?","Как изменить или отменить заявку?","Предусмотрена ли доставка на автомобиле?"],"faqA":["Нет. Ответственный сотрудник полиции проверит заявку и отдельно сообщит о возможности сопровождения.","Район, дни и часы работы зависят от ответственной организации. Ознакомьтесь с информацией в форме заявки.","Этот сайт не сохраняет данные заявки и не отправляет их на сервер. После того как вы самостоятельно отправите SMS, данные поступят назначенному сотруднику полиции. Добровольцам общественного патруля передаётся только минимум информации, необходимой для сопровождения.","Для изменения или отмены заявки обратитесь к ответственному сотруднику полиции. Проверить статус заявки на этом сайте нельзя.","Нет. В рамках этой услуги добровольцы местного общественного патруля сопровождают вас пешком."],"contactDefault":"Сотрудник CPO, группа профилактики преступлений, отдел реагирования и профилактики преступлений полицейского участка Йонам, Полиция провинции Чолла-Намдо","contactReason":"Вопросы по заявкам, изменениям и отмене","contactMissing":"061-470-0327","creatorLabel":"Разработано и организовано: ","creatorMissing":"Ким Ына (совместно с Ким Джинён)","creatorDesc":"Информационная страница о сопровождении жителей домой волонтёрами общественной безопасности.","shareText":"Информация о безопасном сопровождении домой","toastShareOffline":"Чтобы поделиться ссылкой, сначала опубликуйте страницу в интернете.","toastCopied":"Ссылка на страницу скопирована.","toastCopyManual":"Скопируйте адрес из адресной строки браузера.","brandShort":"Безопасный путь домой","appPill":"БЕЗОПАСНЫЙ ПУТЬ","contact":"Позвонить","modalKicker":"ЗАЯВКА ПО SMS","notice":"Если приложение сообщений не открылось или текст отсутствует, скопируйте и вставьте его вручную.","smsTitle":"Заявка на сопровождение домой","smsName":"Имя или псевдоним (необязательно)","smsDate":"Желаемая дата","smsTime":"Желаемое время","smsMeeting":"Место встречи","smsDestination":"Район прибытия (необязательно)","smsPhone":"Номер для связи (необязательно)","smsNotes":"Дополнительно (необязательно)","smsNamePh":"Имя или псевдоним","smsMeetingPh":"Например, рядом со зданием ○○","smsDestinationPh":"Укажите только район или квартал, а не точный домашний адрес","smsPhonePh":"Например, 010-1234-5678","smsNotesPh":"Только необходимое","smsPreview":"Текст SMS","smsCopy":"Копировать текст","smsCopied":"Текст скопирован.","smsMissingFields":"Заполните обязательные поля.","smsMissingNumber":"Нужно указать номер для получения SMS.","smsOpen":"Для подачи заявки нажмите Отправить в приложении SMS.","slidePlaceholder":"Укажите ссылки на изображения.","slidePrev":"Предыдущее изображение","slideNext":"Следующее изображение","privacyConsent":"[Обязательно] Я согласен(на) на сбор, использование и передачу моих персональных данных по SMS для подачи заявки на безопасное сопровождение домой.","privacyDetails":"Цель: рассмотрение заявки, связь с заявителем и организация сопровождения / Данные: указанные в форме имя, контактный номер, дата, время, место и другие сведения / Получатель SMS: назначенный сотрудник полиции / Этот сайт не сохраняет введённые данные.","logoAlt":"Эмблема полицейского участка","slideshowAria":"Слайд-шоу о безопасном сопровождении домой","slideAlt1":"Иллюстрация сопровождения домой № 1","slideAlt2":"Иллюстрация сопровождения домой № 2"},
+    "mn":{"siteTitle":"Гэртээ аюулгүй харихад хамт явах үйлчилгээ | Иргэдэд","siteDesc":"Манай орон нутгийн гэртээ аюулгүй харихад хамт явах үйлчилгээ. QR код уншуулж, зааврыг үзээд SMS-ээр хүсэлт илгээнэ үү.","ogDesc":"Олон нийтийн аюулгүй байдлын сайн дурын ажилтнуудтай хамт гэртээ харих үйлчилгээ.","brand":"Гэртээ аюулгүй харихад хамт явъя","brandHome":"Гэртээ аюулгүй харих үйлчилгээний нүүр хуудас","sub":"Хүсэлт гаргах үйлчилгээ","subOrg":"Иргэдийн хүсэлт авах үйлчилгээ","langLabel":"Хэл сонгох","navOpen":"Цэс нээх","navClose":"Цэс хаах","navTitle":"Цэс","close":"Хаах","navShare":"Хуваалцах","navFaq":"Түгээмэл асуултууд","navContact":"Холбоо барих","navCreator":"Бүтээсэн байгууллага","navBack":"← Цэс рүү буцах","hero1":"Гэртээ ганцаараа харьж байна уу?","hero2":"Бид тантай хамт явж чадна.","lead":"Орой гэртээ харихад санаа зовж байвал орон нутгийн сайн дурын эргүүлийн гишүүнтэй хамт явган харих хүсэлт гаргаж болно. Хүсэлт гаргах алхмуудтай танилцаад SMS-ээр илгээнэ үү.","trust1":"Апп суулгах шаардлагагүй","trust2":"Хүсэлтийн мэдээллийг SMS-ээр илгээнэ","mapOuter":"Хамт явах үйлчилгээний явцыг харуулсан бүдүүвч газрын зураг","evening":"ОРОЙН МЭНД","phoneHeadline":"Өнөөдөр ч гэртээ аюулгүй харьцгаая","mapAlt":"Эхлэх цэг болон уулзах газрыг харуулсан жишээ зураг; бодит байршлын газрын зураг биш","start":"Очих газар","meeting":"Уулзах газар","phoneGuide":"Гэртээ аюулгүй харих заавар","phoneTitle":"Хамтдаа харихад илүү тайван","phoneDesc":"Хүсэлт гаргасны дараа хариуцсан ажилтан хамт явах боломжийг шалгаж, тантай холбогдоно.","tinySteps":["Хүсэлт","Шалгах, холбогдох","Хамт явах"],"sectionKicker":"ҮЙЛЧИЛГЭЭ АВАХ ДАРААЛАЛ","sectionTitle":"Хэрхэн ашиглах вэ?","sectionDesc":"QR кодыг уншуулаад дараах алхмаар хүсэлт гаргана уу.","stepLabel":"АЛХАМ","stepsTitle":["QR код уншуулах","SMS хүсэлт","Хариуцсан ажилтан шалгах","Хамтдаа гэртээ харих"],"stepsDesc":["Сурталчилгааны материал дээрх QR кодыг уншуулж, хүсэлтийн хуудсыг нээнэ.","Хүссэн цаг, тогтоосон уулзах газраа бичиж SMS-ээр хүсэлт илгээнэ.","Цагдаагийн хариуцсан ажилтан хүсэлтийг шалгаж, хамт явах боломжтой эсэхийг мэдэгдэнэ.","Үйлчилгээ баталгаажсаны дараа заасан газарт орон нутгийн сайн дурын эргүүлийн гишүүнтэй уулзаж, гэртээ хамт явган харина."],"footerDefault":"Зохиогчийн эрх: Чолла-Намдо мужийн цагдаагийн газар, Ёнъам цагдаагийн хэлтэс, Гэмт хэргээс урьдчилан сэргийлэх, хариу арга хэмжээний тасаг","footerOrg":" гэртээ аюулгүй харихад хамт явах үйлчилгээг үзүүлнэ. Бүс, цагийн мэдээллийг хүсэлтийн зарлалаас шалгана уу.","footerPrivacy":"Энэ хуудсанд хүсэлтийн мэдээлэл хадгалахгүй.","footerEmergency":"Яаралтай аюул тулгарвал","footerCall":"112 руу залгана уу","footerEnd":".","bottomAria":"Түргэн үйлдлүүд","apply":"Хүсэлт гаргах","modalTitle":"Хүсэлт гаргахаас өмнө шалгана уу","modalDesc":"Өдөр, цаг, уулзах газраа оруулж, хариуцсан ажилтанд илгээх SMS бэлтгэнэ.","modalGuide":"Үйлчилгээний мэдээлэл","area":"Үйлчилгээний бүс","hours":"Ажиллах цаг","unspecified":"Байгууллагын мэдээллээс шалгана уу","modalFollow":"Хариуцсан ажилтан хүсэлтийг шалгаад тантай холбогдоно.","check1":"Үйлчилгээний бүс болон цагийг шалгасан.","check2":"Хүсэлт илгээсэн нь хамт явах үйлчилгээ баталгаажсан гэсэн үг биш бөгөөд яаралтай үед 112 руу залгах ёстойг ойлгосон.","go":"Мессеж нээх →","formMissing":"SMS хүлээн авах дугаар тохируулаагүй.","modalPrivacy":"Энэ хуудас мэдээллийг хадгалахгүй. SMS апп дээр шалгаад өөрөө илгээнэ үү.","faqQ":["Хүсэлт гаргасны дараа сайн дурын ажилтан шууд ирэх үү?","Хэзээ, хаана энэ үйлчилгээг авах боломжтой вэ?","Миний хувийн мэдээллийг хэнд дамжуулах вэ?","Хүсэлтээ хэрхэн өөрчлөх эсвэл цуцлах вэ?","Энэ үйлчилгээ машинаар хүргэж өгдөг үү?"],"faqA":["Үгүй. Цагдаагийн хариуцсан ажилтан хүсэлтийг шалгаж, хамт явах боломжтой эсэхийг тусад нь мэдэгдэнэ.","Үйлчилгээний бүс, өдөр, цаг нь хариуцсан байгууллагаас хамаарч өөр байж болно. Хүсэлт гаргах дэлгэцийн мэдээллийг шалгана уу.","Энэ хуудас хүсэлтийн мэдээллийг хадгалахгүй, серверт илгээхгүй. Та SMS-ээ өөрөө илгээсний дараа л мэдээлэл цагдаагийн хариуцсан ажилтанд очно. Сайн дурын эргүүлийн гишүүдэд хамт явахад шаардлагатай хамгийн бага мэдээллийг л дамжуулна.","Хүсэлтээ өөрчлөх эсвэл цуцлахын тулд цагдаагийн хариуцсан ажилтантай холбогдоно уу. Энэ хуудсаас хүсэлтийн явцыг шууд шалгах боломжгүй.","Үгүй. Энэ үйлчилгээний хүрээнд тухайн бүсийн сайн дурын эргүүлийн гишүүд тантай хамт явган явна."],"contactDefault":"CPO, Гэмт хэргээс урьдчилан сэргийлэх хэсэг, Гэмт хэргээс урьдчилан сэргийлэх, хариу арга хэмжээний тасаг, Ёнъам цагдаагийн хэлтэс, Чолла-Намдо мужийн цагдаагийн газар","contactReason":"Хүсэлт гаргах, өөрчлөх, цуцлах талаар лавлах","contactMissing":"061-470-0327","creatorLabel":"Бүтээсэн, хариуцан ажиллуулж буй: ","creatorMissing":"Kim Eun-a (Kim Jin-yeong-той хамт)","creatorDesc":"Иргэдийг гэртээ аюулгүй харихад туслах олон нийтийн сайн дурын ажилтнуудын үйлчилгээний танилцуулга хуудас.","shareText":"Гэртээ аюулгүй харихад хамт явах үйлчилгээ","toastShareOffline":"Холбоос хуваалцахын өмнө хуудсыг интернетэд байршуулна уу.","toastCopied":"Хуудасны холбоосыг хууллаа.","toastCopyManual":"Хаягийг хөтчийн хаягийн мөрөөс хуулна уу.","brandShort":"Аюулгүй харих","appPill":"АЮУЛГҮЙ ЗАМ","contact":"Утсаар лавлах","modalKicker":"SMS ХҮСЭЛТ","notice":"SMS апп нээгдэхгүй эсвэл бичвэр алга бол бэлтгэсэн мессежийг хуулж тавина уу.","smsTitle":"Гэртээ аюулгүй харих хүсэлт","smsName":"Нэр эсвэл хоч (заавал биш)","smsDate":"Хүссэн өдөр","smsTime":"Хүссэн цаг","smsMeeting":"Уулзах газар","smsDestination":"Очих бүс (заавал биш)","smsPhone":"Холбогдох дугаар (заавал биш)","smsNotes":"Нэмэлт хүсэлт (заавал биш)","smsNamePh":"Нэр эсвэл хоч","smsMeetingPh":"Жишээ нь: ○○ барилгын хажууд","smsDestinationPh":"Гэрийн хаягийг нарийвчлан бичихгүйгээр зөвхөн хороолол эсвэл бүсээ оруулна уу","smsPhonePh":"Жишээ: 010-1234-5678","smsNotesPh":"Зөвхөн шаардлагатай зүйл","smsPreview":"SMS бичвэр","smsCopy":"SMS хуулах","smsCopied":"SMS хууллаа.","smsMissingFields":"Заавал бөглөх талбаруудыг бөглөнө үү.","smsMissingNumber":"SMS хүлээн авах дугаар тохируулна уу.","smsOpen":"Хүсэлт явуулахын тулд SMS апп дээр Илгээхийг дарна уу.","slidePlaceholder":"Зургийн холбоос оруулбал зураг гарна.","slidePrev":"Өмнөх зураг","slideNext":"Дараах зураг","privacyConsent":"[Заавал] Гэртээ аюулгүй харихад хамт явах үйлчилгээнд хүсэлт гаргах зорилгоор миний хувийн мэдээллийг цуглуулах, ашиглах болон SMS-ээр дамжуулахыг зөвшөөрч байна.","privacyDetails":"Зорилго: хүсэлтийг шалгах, холбоо барих, хамт явах ажлыг зохицуулах / Мэдээлэл: маягтад оруулсан нэр, утас, өдөр, цаг, газар болон бусад зүйл / SMS хүлээн авагч: цагдаагийн томилогдсон хариуцсан ажилтан / Энэ хуудас оруулсан мэдээллийг хадгалахгүй.","logoAlt":"Цагдаагийн хэлтсийн лого","slideshowAria":"Гэртээ аюулгүй харихад хамт явах үйлчилгээний зурагт танилцуулга","slideAlt1":"Аюулгүй харих үйлчилгээний тайлбар зураг 1","slideAlt2":"Аюулгүй харих үйлчилгээний тайлбар зураг 2"}
+  };
+
+  // 한국어만 바꾸면 자동 언어 변경해보게
+  Object.assign(I18N.ko, {
+    brand: MAIN_TEXT.brand,
+    sub: MAIN_TEXT.subtitle,
+    hero1: MAIN_TEXT.headingLine1,
+    hero2: MAIN_TEXT.headingLine2,
+    lead: MAIN_TEXT.introduction,
+    trust1: MAIN_TEXT.feature1,
+    trust2: MAIN_TEXT.feature2,
+    evening: MAIN_TEXT.mapEyebrow,
+    phoneHeadline: MAIN_TEXT.mapHeadline,
+    appPill: MAIN_TEXT.mapPill,
+    start: MAIN_TEXT.mapLabelStart,
+    meeting: MAIN_TEXT.mapLabelMeeting,
+    phoneGuide: MAIN_TEXT.mapGuide,
+    phoneTitle: MAIN_TEXT.mapTitle,
+    phoneDesc: MAIN_TEXT.mapDescription,
+    tinySteps: MAIN_TEXT.mapSteps,
+    sectionKicker: MAIN_TEXT.processEyebrow,
+    sectionTitle: MAIN_TEXT.processTitle,
+    sectionDesc: MAIN_TEXT.processDescription,
+    stepsTitle: MAIN_TEXT.stepTitles,
+    stepsDesc: MAIN_TEXT.stepDescriptions,
+    footerDefault: MAIN_TEXT.footerNotice,
+    brandShort: MAIN_TEXT.brand,
+    brandHome: MAIN_TEXT.brand + ' 홈',
+    siteTitle: MAIN_TEXT.brand + ' | 참여 서비스'
+  });
+
+
+  /* 소스 보기 억제 */
+  document.addEventListener('contextmenu',event=>{
+    if(!event.target.closest('input,textarea,select,[contenteditable="true"]'))event.preventDefault();
+  });
+  document.addEventListener('keydown',event=>{
+    const k=event.key.toLowerCase();
+    const mod=event.ctrlKey||event.metaKey;
+    if(event.key==='F12'||(mod&&k==='u')||(mod&&event.shiftKey&&['i','j','c'].includes(k))){
+      event.preventDefault();
+    }
+  });
+  document.addEventListener('dblclick',event=>{
+    if(!event.target.closest('input,textarea,select'))event.preventDefault();
+  },{passive:false});
+
+  const $ = (s) => document.querySelector(s);
+  let currentLang = 'ko';
+  try { const preferred=localStorage.getItem('safeWalkLanguage'); if(I18N[preferred]) currentLang=preferred; } catch(e) {}
+  const T=()=>I18N[currentLang] || I18N.ko;
+  const localizedValue=(key)=>{
+    const translated=CONFIG.localized?.[currentLang]?.[key];
+    return (typeof translated==='string' && translated.trim())?translated.trim():String(CONFIG[key]||'').trim();
+  };
+  const setText=(selector, value)=>{const el=$(selector);if(el)el.textContent=value;};
+  const setLastText=(el, value)=>{ if(!el)return;const n=[...el.childNodes].reverse().find(x=>x.nodeType===Node.TEXT_NODE);if(n)n.textContent=value; };
+  function updateFormLinkState(){
+    $('#form-status').hidden=validMobileNumber(smsNumber());
+    $('#form-language-notice').hidden=false;
+  }
+  function applyLanguage(lang){
+    if(!I18N[lang])lang='ko';
+    currentLang=lang;
+    document.documentElement.lang=lang==='zh'?'zh-CN':lang;
+    document.title=T().siteTitle;
+    document.querySelector('meta[name="description"]').content=T().siteDesc;
+    document.querySelector('meta[property="og:title"]').content=T().brand;
+    document.querySelector('meta[property="og:description"]').content=T().ogDesc;
+    $('#lang-select').value=lang;
+    $('#lang-label').textContent=T().langLabel;
+    $('#lang-select').title=T().langLabel;
+    $('.brand').setAttribute('aria-label',T().brandHome);
+    setText('.brand-title-full',T().brand);setText('.brand-title-short',T().brandShort);
+    setText('#org-subtitle',localizedValue('organization')?localizedValue('organization')+' · '+T().subOrg:T().sub);
+    menuBtn.setAttribute('aria-label',menu.classList.contains('is-open')?T().navClose:T().navOpen);
+    menu.setAttribute('aria-label',T().navTitle);
+    setText('.drawer-head-title',T().navTitle);
+    $('#close-menu').setAttribute('aria-label',T().navClose);
+    setText('#drawer-back',T().navBack);
+    const mBtns=$$('#drawer-home .menu-item');
+    [T().navShare,T().navFaq,T().navContact,T().navCreator].forEach((label,i)=>{
+      const node=[...mBtns[i].childNodes].find(n=>n.nodeType===Node.TEXT_NODE && n.textContent.trim());
+      if(node)node.textContent=label+' ';
+    });
+    $('#hero-title').innerHTML=escapeHTML(T().hero1)+'<br><strong>'+escapeHTML(T().hero2)+'</strong>';
+    setText('.hero-lead',T().lead);
+    $$('.hero-trust span').forEach((el,i)=>setLastText(el,i===0?T().trust1:T().trust2));
+    $('.phone-stage').setAttribute('aria-label',T().mapOuter);
+    setText('.phone-top .eng',T().evening);
+    setText('.phone-top b',T().phoneHeadline);setText('.app-pill',T().appPill);
+    $('.map-art').setAttribute('aria-label',T().mapAlt);
+    setText('.map-label.start',T().start);setText('.map-label.end',T().meeting);
+    setLastText($('.phone-card-head'),T().phoneGuide);
+    setText('.phone-card h3',T().phoneTitle);
+    setText('.phone-card p',T().phoneDesc);
+    $$('.phone-step').forEach((el,i)=>setLastText(el,T().tinySteps[i]));
+    setText('.section-kicker',T().sectionKicker);
+    setText('#process-title',T().sectionTitle);
+    setText('.section-desc',T().sectionDesc);
+    $$('.step-item').forEach((el,i)=>{
+      el.querySelector('.step-no').textContent=lang==='ko'?`STEP 0${i+1}`:`${T().stepLabel} ${String(i+1).padStart(2,'0')}`;
+      el.querySelector('h3').textContent=T().stepsTitle[i];
+      el.querySelector('p').textContent=T().stepsDesc[i];
+    });
+    setText('.footer strong',T().brand);
+    setText('#footer-org',localizedValue('organization')?localizedValue('organization')+T().footerOrg:T().footerDefault);
+    const fn=$('.footer-note');
+    fn.replaceChildren(document.createTextNode(T().footerPrivacy))
+    $('.bottom-bar').setAttribute('aria-label',T().bottomAria);
+    setLastText($('#open-apply'),T().apply);
+    setText('#modal-title',T().modalTitle);setText('#modal-desc',T().modalDesc);
+    setText('.modal-info b',T().modalGuide);
+    setText('#modal-area-info',T().area+': '+(localizedValue('serviceArea')||T().unspecified));
+    setText('#modal-hours-info',T().hours+': '+(localizedValue('operatingHours')||T().unspecified));
+    setText('.modal-info > div:last-child',T().modalFollow);
+    setText('.check-line:nth-of-type(1) span',T().check1);
+    setText('#check-privacy + span',T().privacyConsent);
+    setText('#privacy-details',T().privacyDetails);
+    $('#brand-image').alt=T().logoAlt;
+    $('#hero-slideshow').setAttribute('aria-label',T().slideshowAria);
+    $('#slide-image-1').alt=T().slideAlt1;
+    $('#slide-image-2').alt=T().slideAlt2;
+    setText('#form-go',T().go);setText('#form-status',T().formMissing);
+    setText('.modal-box > .modal-small',T().modalPrivacy);
+    $('#modal-close').setAttribute('aria-label',T().close);
+    updateFormLinkState();
+    applySmsTranslations();
+    if(!$('#drawer-detail').hidden && activeDetail) renderMenuDetail(activeDetail);
+    try{localStorage.setItem('safeWalkLanguage',lang)}catch(e){}
+  }
+  function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function $$(s){return [...document.querySelectorAll(s)];}
+  let activeDetail='';
+  let savedFocus = null;
+  let toastTimer = null;
+  const menu = $('#side-menu');
+  const menuBtn = $('#menu-btn');
+  const backdrop = $('#drawer-backdrop');
+  const modal = $('#apply-modal');
+  const formGo = $('#form-go');
+  const checkScope = $('#check-scope');
+  const checkPrivacy = $('#check-privacy');
+
+  if(CONFIG.logoImageUrl.trim()){
+    const path = CONFIG.logoImageUrl.trim();
+    const allowed = (!/^[a-z][a-z0-9+.-]*:/i.test(path) && !path.startsWith('//')) || /^https:\/\//i.test(path);
+    if(allowed){
+      const img = $('#brand-image');
+      img.addEventListener('load',()=>{img.hidden=false;$('#brand-mark').hidden=true;});
+      img.addEventListener('error',()=>{img.hidden=true;$('#brand-mark').hidden=false;});
+      img.src=path;
+    }
+  }
+
+  function toast(msg){
+    const t=$('#toast');t.textContent=msg;t.hidden=false;
+    clearTimeout(toastTimer);toastTimer=setTimeout(()=>{t.hidden=true;},3200);
+  }
+  function syncLock(){document.body.classList.toggle('is-locked',menu.classList.contains('is-open')||!modal.hidden)}
+  function showMenu(){
+    if(!modal.hidden)return;
+    savedFocus=document.activeElement;
+    menu.inert=false;menu.removeAttribute('inert');menu.setAttribute('aria-hidden','false');
+    backdrop.hidden=false;
+    requestAnimationFrame(()=>{menu.classList.add('is-open');backdrop.classList.add('is-open');});
+    menuBtn.setAttribute('aria-expanded','true');menuBtn.setAttribute('aria-label',T().navClose);
+    showMenuHome();syncLock();$('#close-menu').focus();
+  }
+  function hideMenu(){
+    menu.classList.remove('is-open');backdrop.classList.remove('is-open');
+    menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label',T().navOpen);
+    menu.setAttribute('aria-hidden','true');menu.inert=true;
+    backdrop.hidden=true;syncLock();
+    if(savedFocus&&typeof savedFocus.focus==='function')savedFocus.focus();
+  }
+  function showMenuHome(){activeDetail='';$('#drawer-home').hidden=false;$('#drawer-detail').hidden=true;}
+  function renderMenuDetail(type){
+    const d=T(), title=$('#drawer-detail-title'), body=$('#drawer-detail-body');
+    body.replaceChildren();
+    if(type==='faq'){
+      title.textContent=d.navFaq;
+      const list=document.createElement('div');list.className='faq-list';
+      d.faqQ.forEach((question,i)=>{
+        const details=document.createElement('details');
+        const summary=document.createElement('summary');summary.textContent=question;
+        const answer=document.createElement('div');answer.className='faq-answer';
+        answer.textContent = d.faqA[i];
+        details.append(summary,answer);list.append(details);
+      });body.append(list);
+    }
+    if(type==='contact'){
+      title.textContent=d.navContact;
+      const c=document.createElement('div');c.className='detail-card';
+      const head=document.createElement('strong');head.textContent=localizedValue('organization')||d.contactDefault;c.append(head);
+      const p=document.createElement('div');p.textContent=CONFIG.contactPhone.trim()?d.contactReason:d.contactMissing;c.append(p);
+      if(CONFIG.contactPhone.trim()){
+        const a=document.createElement('a');a.textContent=CONFIG.contactPhone.trim();
+        a.href='tel:'+CONFIG.contactPhone.replace(/[^0-9+]/g,'');c.append(a);
+      }body.append(c);
+    }
+    if(type==='creator'){
+      title.textContent=d.navCreator;
+      const c=document.createElement('div');c.className='detail-card';
+      const h=document.createElement('strong');h.textContent=d.brand;
+      const p=document.createElement('div');p.textContent=d.creatorLabel+(localizedValue('creatorName')||d.creatorMissing);
+      const desc=document.createElement('div');desc.textContent=d.creatorDesc;
+      c.append(h,p,desc);body.append(c);
+    }
+  }
+  function showMenuDetail(type){
+    activeDetail=type;
+    renderMenuDetail(type);
+    $('#drawer-home').hidden=true;$('#drawer-detail').hidden=false;$('#drawer-back').focus();
+  }
+  menuBtn.addEventListener('click',()=>{menu.classList.contains('is-open')?hideMenu():showMenu();});
+  $('#close-menu').addEventListener('click',hideMenu);
+  backdrop.addEventListener('click',hideMenu);
+  $('#drawer-back').addEventListener('click',()=>{showMenuHome();$('#drawer-share').focus();});
+  document.querySelectorAll('[data-drawer-view]').forEach(btn=>btn.addEventListener('click',()=>showMenuDetail(btn.dataset.drawerView)));
+
+  async function sharePage(){
+    const url=window.location.href;
+    if(location.protocol==='file:'){toast(T().toastShareOffline);return;}
+    try{
+      if(navigator.share){await navigator.share({title:document.title,text:T().shareText,url});}
+      else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(url);toast(T().toastCopied);}
+      else toast(T().toastCopyManual);
+    }catch(err){if(err?.name!=='AbortError')toast(T().toastCopyManual);}
+  }
+  $('#drawer-share').addEventListener('click',sharePage);
+
+  function syncGo(){
+    formGo.disabled = !(
+      checkScope.checked &&
+      checkPrivacy.checked
+    );
+  }
+
+  checkScope.addEventListener('change', syncGo);
+  checkPrivacy.addEventListener('change', syncGo);
+
+  function openModal(){
+    if(menu.classList.contains('is-open'))hideMenu();
+    savedFocus=document.activeElement;checkScope.checked=false;
+checkPrivacy.checked=false;
+syncGo();
+    updateSmsPreview();
+    updateFormLinkState();modal.hidden=false;syncLock();$('#modal-close').focus();
+  }
+  function closeModal(){modal.hidden=true;syncLock();if(savedFocus?.focus)savedFocus.focus()}
+  $('#open-apply').addEventListener('click',openModal);
+  $('#modal-close').addEventListener('click',closeModal);
+  $('#modal-backdrop').addEventListener('click',closeModal);
+  formGo.addEventListener('click',()=>{
+    if(formGo.disabled||!checkSmsReady())return;
+    const body=makeSmsBody();
+    updateSmsPreview();
+    toast(T().smsOpen);
+    // 파라미터 무시
+    // 어렵다이
+    window.location.href=smsHref(body);
+  });
+
+  function trapTab(event,container){
+    const targets=[...container.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), summary')].filter(el=>el.offsetWidth||el.offsetHeight);
+    if(!targets.length)return;
+    const first=targets[0],last=targets[targets.length-1];
+    if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      if(!modal.hidden){closeModal();return;}
+      if(menu.classList.contains('is-open'))hideMenu();
+    }
+    if(e.key==='Tab'){
+      if(!modal.hidden)trapTab(e,$('#modal-box'));
+      else if(menu.classList.contains('is-open'))trapTab(e,menu);
+    }
+  });
+
+
+  // 그림과 배경음악은 아래 CONFIG에 넣은 외부 파일 주소에서 명령
+  const music = $('#bg-music');
+  let musicFinished = false;
+  let backgroundMusicPlaying = false;
+  function validAssetUrl(url){
+    if(typeof url!=='string'||!url.trim())return false;
+    const u=url.trim();
+    if(/^https:\/\//i.test(u))return true;
+    return !/^[a-z][a-z0-9+.-]*:/i.test(u) && !u.startsWith('//') && !u.includes('..');
+  }
+  async function startBackgroundMusic(){
+    if(musicFinished||!music.src||!validAssetUrl(CONFIG.musicUrl))return;
+    try{
+      music.volume=Math.max(0,Math.min(1,Number(CONFIG.musicVolume)||0.12));
+      await music.play();
+      backgroundMusicPlaying=true;
+    }catch(e){backgroundMusicPlaying=false;}
+  }
+  function stopBackgroundMusic(){
+    musicFinished=true;
+    backgroundMusicPlaying=false;
+    music.pause();
+    music.currentTime=0;
+  }
+  if(validAssetUrl(CONFIG.musicUrl)){
+    music.src=CONFIG.musicUrl.trim();
+    music.setAttribute('autoplay','');
+    startBackgroundMusic(); // 인터넷이 허용하믄 즉시 시작
+    const resumeOnFirstGesture=(event)=>{
+      if(musicFinished||backgroundMusicPlaying)return;
+      if(event.target.closest?.('#contact-btn'))return;
+      startBackgroundMusic();
+    };
+    document.addEventListener('pointerdown',resumeOnFirstGesture,{passive:true});
+    document.addEventListener('keydown',resumeOnFirstGesture);
+  }
+
+  const slideImages=[$('#slide-image-1'),$('#slide-image-2')];
+  const slideSources=[CONFIG.image1Url,CONFIG.image2Url];
+  let slideIndex=0;
+  let slideTimer=null;
+  let availableSlides=[];
+  function renderSlides(){
+    slideImages.forEach((img,i)=>{
+      img.classList.toggle('is-active',i===slideIndex);
+      img.setAttribute('aria-hidden',i===slideIndex?'false':'true');
+    });
+  }
+  function setSlide(i){
+    if(availableSlides.length<2)return;
+    const next=availableSlides[(availableSlides.indexOf(i)>=0?availableSlides.indexOf(i):0)];
+    slideIndex=next;renderSlides();
+  }
+  function advanceSlide(delta=1){
+    if(availableSlides.length<2)return;
+    const position=availableSlides.indexOf(slideIndex);
+    slideIndex=availableSlides[(position+delta+availableSlides.length)%availableSlides.length];
+    renderSlides();
+  }
+  function startSlideTimer(){
+    clearInterval(slideTimer);
+    if(availableSlides.length>1)slideTimer=setInterval(()=>{
+      if(!document.hidden)advanceSlide(1);
+    },Math.max(2000,Number(CONFIG.slideIntervalMs)||5000));
+  }
+  for(let i=0;i<2;i++){
+    const src=slideSources[i];const img=slideImages[i];
+    if(!validAssetUrl(src))continue;
+    img.onload=()=>{
+      img.hidden=false;
+      if(!availableSlides.includes(i))availableSlides.push(i);
+      availableSlides.sort((a,b)=>a-b);
+      if(availableSlides.length===1)slideIndex=i;
+      $('#slide-placeholder').hidden=true;
+      renderSlides();startSlideTimer();
+    };
+    img.onerror=()=>{
+      img.hidden=true;
+      availableSlides=availableSlides.filter(v=>v!==i);
+      if(!availableSlides.includes(slideIndex))slideIndex=availableSlides[0]??0;
+      $('#slide-placeholder').hidden=availableSlides.length>0;
+      renderSlides();startSlideTimer();
+    };
+    img.src=src.trim();
+  }
+  let swipeStartX=null;
+  $('#hero-slideshow').addEventListener('touchstart',e=>{swipeStartX=e.touches[0]?.clientX??null;},{passive:true});
+  $('#hero-slideshow').addEventListener('touchend',e=>{
+    if(swipeStartX===null)return;
+    const difference=(e.changedTouches[0]?.clientX??swipeStartX)-swipeStartX;
+    if(Math.abs(difference)>45){advanceSlide(difference>0?-1:1);startSlideTimer();}
+    swipeStartX=null;
+  },{passive:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)startSlideTimer();});
+  window.addEventListener('pagehide',()=>clearInterval(slideTimer));
+
+  const smsFields={
+    name:$('#sms-name'),date:$('#sms-date'),time:$('#sms-time'),meeting:$('#sms-meeting'),
+    destination:$('#sms-destination'),phone:$('#sms-phone'),notes:$('#sms-notes')
+  };
+  const SMS_FIELD_LABELS={
+    name:'smsName',date:'smsDate',time:'smsTime',meeting:'smsMeeting',
+    destination:'smsDestination',phone:'smsPhone',notes:'smsNotes'
+  };
+  const SMS_ORDER=['name','date','time','meeting','destination','phone','notes'];
+  const langNames={ko:'한국어',en:'English',zh:'中文',vi:'Tiếng Việt',th:'ภาษาไทย',uz:'O‘zbekcha',ru:'Русский',mn:'Монгол'};
+  function makeSmsBody(){
+    const d=T();
+    const lines=[`[${d.smsTitle}]`,`${d.langLabel}: ${langNames[currentLang]}`];
+    for(const key of SMS_ORDER){
+      const value=smsFields[key].value.trim();
+      if(value)lines.push(`${d[SMS_FIELD_LABELS[key]].replace(/\s*\([^)]*\)/g,'').replace(/\s*（[^）]*）/g,'')}: ${value}`);
+    }
+    return lines.join('\n');
+  }
+  function updateSmsPreview(){
+    $('#sms-preview').value=makeSmsBody();
+  }
+  Object.values(smsFields).forEach(input=>input.addEventListener('input',updateSmsPreview));
+  function applySmsTranslations(){
+    const d=T();
+    for(const key of SMS_ORDER){
+      setText('#sms-label-'+key,d[SMS_FIELD_LABELS[key]]);
+    }
+    smsFields.name.placeholder=d.smsNamePh;
+    smsFields.meeting.placeholder=d.smsMeetingPh;
+    smsFields.destination.placeholder=d.smsDestinationPh;
+    smsFields.phone.placeholder=d.smsPhonePh;
+    smsFields.notes.placeholder=d.smsNotesPh;
+    setText('#sms-label-preview',d.smsPreview);
+    setText('#sms-copy',d.smsCopy);
+    setText('#slide-placeholder',d.slidePlaceholder);
+    $('#contact-btn').setAttribute('aria-label',d.contact);
+    setText('#contact-label',d.contact);
+    setText('.modal-kicker',d.modalKicker);
+    setText('#form-language-notice',d.notice);
+    updateSmsPreview();
+  }
+  function validMobileNumber(value){return /^\+?[0-9]{8,15}$/.test(String(value||'').replace(/[\s().-]/g,''));}
+  function smsNumber(){return String(CONFIG.smsRecipient||'').replace(/[\s().-]/g,'');}
+  function checkSmsReady(){
+    const required=['date','time','meeting'];
+    for(const key of required){
+      if(!smsFields[key].value.trim()){
+        smsFields[key].focus();
+        smsFields[key].reportValidity();
+        toast(T().smsMissingFields);
+        return false;
+      }
+    }
+    if(!validMobileNumber(smsNumber())){
+      $('#form-status').hidden=false;
+      toast(T().smsMissingNumber);
+      return false;
+    }
+    return true;
+  }
+  function smsHref(body){
+    const isiOS=/iPhone|iPad|iPod/i.test(navigator.userAgent) || (/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
+    return `sms:${smsNumber()}${isiOS?'&':'?'}body=${encodeURIComponent(body)}`;
+  }
+  $('#sms-copy').addEventListener('click',async()=>{
+    const value=makeSmsBody();
+    try{
+      await navigator.clipboard.writeText(value);
+      toast(T().smsCopied);
+    }catch(e){
+      const area=$('#sms-preview');area.focus();area.select();
+      try{document.execCommand('copy');toast(T().smsCopied);}catch(err){toast(T().notice);}
+    }
+  });
+  $('#contact-btn').addEventListener('click',()=>{
+    stopBackgroundMusic();
+    const phone=String(CONFIG.contactPhone||'').replace(/[\s().-]/g,'');
+    if(!validMobileNumber(phone)){toast(T().contactMissing);return;}
+    window.location.href='tel:'+phone;
+  });
+
+  $('#lang-select').addEventListener('change',e=>applyLanguage(e.target.value));
+  applyLanguage(currentLang);
+</script>
+</body>
+</html>
